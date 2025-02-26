@@ -10,8 +10,8 @@ type Props = {};
 
 export default function Header({}: Props) {
   return (
-    <header className="container mx-auto flex justify-between items-center border-b-[0.5px] border-[gray] bg-transparent p-6 space-x-4 h-24">
-      <h1 className="text-lg font-semibold">📲</h1>
+    <header className="container mx-auto flex justify-between items-center bg-transparent p-6 space-x-4 h-24">
+      <h1 className="text-2xl font-semibold">📲</h1>
 
       <nav className="flex items-center space-x-6">
         <ul className="hidden lg:flex items-center justify-between space-x-6 text-sm font-light">
