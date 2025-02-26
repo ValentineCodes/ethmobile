@@ -2,9 +2,11 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
+import { IoBugOutline } from "react-icons/io5";
+
 type Props = {};
 
-export default function PauxWallet({}: Props) {
+export default function ContractDebugger({}: Props) {
   return (
     <section className="px-6 py-14 max-w-[1200px] mx-auto flex flex-col md:flex-row items-center md:justify-between md:space-x-14">
       <div className="container flex-1 flex flex-col items-center gap-6 md:items-start">
@@ -22,8 +24,8 @@ export default function PauxWallet({}: Props) {
           transition={{ duration: 0.7, ease: "easeInOut", delay: 0.2 }}
           className="flex flex-col items-center md:items-start gap-2"
         >
-          <h1 className="text-5xl font-extrabold">P</h1>
-          <h1 className="text-2xl font-extralight">PAUX WALLET</h1>
+          <IoBugOutline className="text-5xl font-extrabold" />
+          <h1 className="text-2xl font-extralight">CONTRACT DEBUGGER</h1>
         </motion.div>
 
         <motion.div
@@ -40,8 +42,7 @@ export default function PauxWallet({}: Props) {
           transition={{ duration: 0.7, ease: "easeInOut", delay: 0.35 }}
         >
           <p className="text-4xl text-gray-400 max-w-sm text-center md:text-left">
-            Customize your OWN <span className="whitespace-nowrap">in-app</span>{" "}
-            wallet
+            Experiment with Solidity from an auto-updated frontend
           </p>
         </motion.div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import ContractDebugger from "@/components/features/ContractDebugger";
 import PauxWallet from "@/components/features/PauxWallet";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -18,6 +19,13 @@ export default function Home() {
         className="bg-[#292f37] min-h-screen bg-no-repeat bg-cover"
       >
         <PauxWallet />
+      </section>
+
+      <section
+        id="about"
+        className="bg-[#292f37] min-h-screen bg-no-repeat bg-cover"
+      >
+        <ContractDebugger />
       </section>
     </main>
   );
