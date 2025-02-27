@@ -15,15 +15,15 @@ export default function Home() {
         <Hero />
       </Popover>
 
-      <section id="wallet" className="min-h-screen">
+      <section id="wallet" className="bg-blue-50">
         <PauxWallet />
       </section>
 
-      <section id="debugger" className="min-h-screen">
+      <section id="debugger">
         <ContractDebugger />
       </section>
 
-      <section id="hooks" className="min-h-screen">
+      <section id="hooks" className="bg-blue-50">
         <Hooks />
       </section>
     </main>
