@@ -1,126 +1,103 @@
 import React from "react";
 
-import { motion } from "framer-motion";
-import { Button } from "@headlessui/react";
-
-type Props = {};
-
-export default function Hero({}: Props) {
+export default function Hero() {
   return (
-    <section className="px-6 py-14 max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between md:justify-between md:space-x-14 md:mt-16">
-      <div className="container flex flex-col gap-6 items-center md:items-start">
-        <motion.div
-          initial={{
-            x: 100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.2 }}
-        >
-          <h1 className="text-5xl font-extrabold">Scaffold-ETH Mobile</h1>
-        </motion.div>
-        <motion.div
-          initial={{
-            x: 100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.35 }}
-        >
-          <p className="text-2xl text-gray-400 max-w-lg text-center md:text-left">
-            Become the founder of a native mobile dApp with your OWN
-            customizable in-app wallet using lightweight, composable, and
-            type-safe modules for seamless Ethereum integrations
+    <section className="px-6 py-14 max-w-[1200px] mx-auto">
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-between md:justify-between md:space-x-14 md:mt-16">
+        <div>
+          {/* Logo */}
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+            Scaffold-ETH Mobile
+          </h1>
+
+          {/* Main heading */}
+          <p className="max-w-lg mx-auto text-xl sm:text-2xl text-gray-300 mb-8">
+            Build native mobile dApps using{" "}
+            <span className="text-white font-semibold">lightweight</span>,{" "}
+            <span className="text-white font-semibold">composable</span>, and{" "}
+            <span className="text-white font-semibold">type-safe</span> modules
+            that interface with Ethereum
           </p>
-        </motion.div>
-        <motion.div
-          initial={{
-            x: 100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.5 }}
-          className="flex gap-4"
-        >
-          <Button className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
-            Get Started
-          </Button>
-          <Button className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
-            Why SEM?
-          </Button>
-          <Button className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
-            GitHub
-          </Button>
-        </motion.div>
+
+          {/* Action buttons */}
+          <div className="flex gap-4 mb-12">
+            <button className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium transition-colors">
+              Get started
+            </button>
+            <button className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors">
+              Why SEM?
+            </button>
+            <button className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors">
+              GitHub
+            </button>
+          </div>
+        </div>
+
+        {/* Package manager tabs */}
+        <div>
+          <div className="w-full max-w-[500px] mx-auto bg-gray-800/50 rounded-lg overflow-hidden backdrop-blur-sm">
+            <div className="flex border-b border-gray-700">
+              <button className="px-4 py-2 text-orange-400 border-b-2 border-orange-400 font-medium">
+                git
+              </button>
+            </div>
+            <div className="p-4 pb-14 text-left font-mono">
+              <code className="text-gray-300">
+                git clone https://github.com/dewdrip/scaffold-eth-mobile
+              </code>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap justify-between mt-10">
+            <div className="flex items-center gap-2 border border-gray-600 px-3 py-[0.35rem] rounded-lg">
+              <span className="text-sm font-bold text-gray-400 bg-gray-800 rounded-md px-3">
+                stars
+              </span>
+              <span className="text-sm font-bold text-white">2.4k</span>
+            </div>
+            <div className="flex items-center gap-2 border border-gray-600 px-3 py-[0.35rem] rounded-lg">
+              <span className="text-md font-bold text-gray-400 bg-gray-800 rounded-md px-3">
+                coverage
+              </span>
+              <span className="text-sm font-bold text-green-400">100%</span>
+            </div>
+            <div className="flex items-center gap-2 border border-gray-600 px-3 py-[0.35rem] rounded-lg">
+              <span className="text-md font-bold text-gray-400 bg-gray-800 rounded-md px-3">
+                license
+              </span>
+              <span className="text-sm font-bold text-white">MIT</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-6">
-        <motion.div
-          initial={{
-            x: -100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="border border-white rounded-md shadow-[-3px_-3px_10px_2px_#15f7d6] w-full max-w-[500px] mt-12 md:mt-0"
-        >
-          <div className="px-6 pt-4 pb-2 bg-gray-700">
-            <ul className="text-xl flex justify-start">
-              <li className="border-b-2 border-b-orange-300 pb-2 px-4">git</li>
-            </ul>
-          </div>
-
-          <div className="px-6 py-4 bg-gray-800 h-[150px]">
-            <code>
-              git clone https://github.com/dewdrip/scaffold-eth-mobile
-            </code>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{
-            x: 100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.5 }}
-          className="flex justify-between"
-        >
-          <Button className="inline-flex w-[30%] items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
-            Get Started
-          </Button>
-          <Button className="inline-flex w-[30%] items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
-            Why SEM?
-          </Button>
-          <Button className="inline-flex w-[30%] items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
-            GitHub
-          </Button>
-        </motion.div>
+      {/* Feature grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="p-6 bg-gray-800/30 rounded-lg backdrop-blur-sm">
+          <h3 className="text-xl font-semibold text-white mb-2">Modular</h3>
+          <p className="text-gray-400">
+            Composable modules to build applications & libraries with speed
+          </p>
+        </div>
+        <div className="p-6 bg-gray-800/30 rounded-lg backdrop-blur-sm">
+          <h3 className="text-xl font-semibold text-white mb-2">Lightweight</h3>
+          <p className="text-gray-400">
+            Tiny bundle size optimized for tree-shaking
+          </p>
+        </div>
+        <div className="p-6 bg-gray-800/30 rounded-lg backdrop-blur-sm">
+          <h3 className="text-xl font-semibold text-white mb-2">Performant</h3>
+          <p className="text-gray-400">
+            Optimized architecture compared to alternative libraries
+          </p>
+        </div>
+        <div className="p-6 bg-gray-800/30 rounded-lg backdrop-blur-sm">
+          <h3 className="text-xl font-semibold text-white mb-2">Typed APIs</h3>
+          <p className="text-gray-400">
+            Flexible programmatic APIs with extensive TypeScript typing
+          </p>
+        </div>
       </div>
     </section>
   );

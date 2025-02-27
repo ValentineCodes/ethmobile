@@ -23,8 +23,7 @@ export default function Header({}: Props) {
               href="#skills"
               className="hover:text-[#15f7d6] duration-300 flex items-center space-x-2"
             >
-              <span>Examples</span>
-              <FaTwitter />
+              Examples
             </a>
           </li>
           <li>
