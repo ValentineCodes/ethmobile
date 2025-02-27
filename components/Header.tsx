@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { CgClose } from "react-icons/cg";
 import { FaLinkedinIn, FaTwitter, FaGithub } from "react-icons/fa";
+import Image from "next/image";
 
 import { Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
@@ -11,18 +12,19 @@ type Props = {};
 export default function Header({}: Props) {
   return (
     <header className="container mx-auto flex justify-between items-center bg-transparent p-6 space-x-4 h-24">
-      <h1 className="text-2xl font-semibold">📲</h1>
+      <div className="flex relative w-8 aspect-square">
+        <Image alt="Logo" fill src="/images/logo.png" />
+      </div>
 
       <nav className="flex items-center space-x-6">
         <ul className="hidden lg:flex items-center justify-between space-x-6 text-sm font-light">
           <li>
-            <a href="#about" className="hover:text-[#15f7d6] duration-300">
-              Features
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="hover:text-[#15f7d6] duration-300">
-              Examples
+            <a
+              href="#skills"
+              className="hover:text-[#15f7d6] duration-300 flex items-center space-x-2"
+            >
+              <span>Examples</span>
+              <FaTwitter />
             </a>
           </li>
           <li>
@@ -53,10 +55,6 @@ export default function Header({}: Props) {
             <FaGithub className="text-gray-500 hover:text-[#15f7d6] duration-200 text-2xl" />
           </Link>
         </div>
-
-        <span className="text-4xl text-gray-600 font-thin block lg:hidden">
-          |
-        </span>
 
         <Popover.Button className="hover:bg-black hover:bg-opacity-20 p-2 rounded-lg block lg:hidden">
           {({ open }) =>
