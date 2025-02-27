@@ -36,7 +36,7 @@ export default function Header({}: Props) {
           </Link>
 
           <Link
-            href="https://github.com/ValentineCodes/scaffold-eth-mobile"
+            href="https://github.com/dewdrip/scaffold-eth-mobile"
             target="_blank"
           >
             <FaGithub className="text-gray-600 hover:text-black duration-200 text-2xl" />
