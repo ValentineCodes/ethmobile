@@ -42,7 +42,7 @@ export default function PauxWallet({}: Props) {
           transition={{ duration: 0.7, ease: "easeInOut", delay: 0.35 }}
         >
           <p className="text-4xl text-gray-400 max-w-sm text-center md:text-left">
-            Customizable, and Lightweight{" "}
+            Lightweight, and Customizable{" "}
             <span className="whitespace-nowrap">in-app</span> wallet
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export default function PauxWallet({}: Props) {
           transition={{ duration: 0.7, ease: "easeInOut" }}
           className="w-full max-w-[500px] mt-12 md:mt-0 flex justify-center ml-10 md:ml-0"
         >
-          <div className="relative w-[200px] md:w-[300px] aspect-square rounded-xl shadow-[0px_0px_4px_0px_#15f7d6]">
+          <div className="relative w-[200px] md:w-[300px] aspect-square rounded-xl shadow-[0px_0px_4px_0px_#ccc]">
             <Image
               alt="Wallet Metadata"
               src="/images/wallet_metadata.png"
@@ -90,7 +90,7 @@ export default function PauxWallet({}: Props) {
               className="rounded-xl"
             />
 
-            <div className="absolute top-[100px] right-[160px] md:top-[150px] md:right-[250px] w-[150px] md:w-[200px] aspect-square rounded-xl shadow-[0px_0px_4px_0px_#15f7d6]">
+            <div className="absolute top-[100px] right-[160px] md:top-[150px] md:right-[250px] w-[200px] aspect-square rounded-xl shadow-[0px_0px_4px_0px_#ccc]">
               <Image
                 alt="Wallet Metadata"
                 src="/images/wallet_features.png"
