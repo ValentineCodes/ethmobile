@@ -9,21 +9,21 @@ import { Popover } from "@headlessui/react";
 
 export default function Home() {
   return (
-    <main>
+    <main className="text-black">
       <Popover className="relative min-h-screen w-full">
         <Header />
         <Hero />
       </Popover>
 
-      <section id="wallet" className="min-h-screen bg-no-repeat bg-cover">
+      <section id="wallet" className="min-h-screen">
         <PauxWallet />
       </section>
 
-      <section id="debugger" className="min-h-screen bg-no-repeat bg-cover">
+      <section id="debugger" className="min-h-screen">
         <ContractDebugger />
       </section>
 
-      <section id="hooks" className="min-h-screen bg-no-repeat bg-cover">
+      <section id="hooks" className="min-h-screen">
         <Hooks />
       </section>
     </main>
