@@ -45,9 +45,12 @@ export default function Hero() {
 
           {/* Action buttons */}
           <div className="flex gap-4 mb-12">
-            <button className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800">
+            <Link
+              href="https://github.com/dewdrip/scaffold-eth-mobile"
+              className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800"
+            >
               Get started
-            </button>
+            </Link>
             <button
               onClick={() => setShowWhy(true)}
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
