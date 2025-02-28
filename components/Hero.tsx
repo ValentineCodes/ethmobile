@@ -1,6 +1,7 @@
+import axios from "axios";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 import { RxClipboardCopy } from "react-icons/rx";
@@ -9,6 +10,7 @@ import { TiTickOutline } from "react-icons/ti";
 export default function Hero() {
   const [isCopied, setIsCopied] = useState(false);
   const [showWhy, setShowWhy] = useState(false);
+  const [starsCount, setStarsCount] = useState("");
 
   const copyCommand = async () => {
     try {
@@ -24,6 +26,19 @@ export default function Hero() {
       console.error("Failed to copy text:", err);
     }
   };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data: repo } = await axios.get(
+          "https://api.github.com/repos/valentinecodes/scaffold-eth-mobile",
+        );
+        setStarsCount(repo.stargazers_count);
+      } catch (error) {
+        console.log("Failed to get stargazers count: ", error);
+      }
+    })();
+  }, []);
 
   return (
     <section className="p-6 max-w-[1200px] mx-auto">
@@ -105,7 +120,7 @@ export default function Hero() {
                 <span className="text-sm text-gray-600 font-bold bg-white rounded-md px-2">
                   stars
                 </span>
-                <span className="text-sm font-bold">11</span>
+                <span className="text-sm font-bold">{starsCount}</span>
               </div>
             </Link>
 
