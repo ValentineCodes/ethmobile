@@ -129,13 +129,13 @@ export default function Hero() {
         <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
           <h3 className="text-lg font-bold mb-2">Modular</h3>
           <p className="text-gray-400">
-            Composable modules to build applications & libraries with speed
+            Composable modules to build applications with speed
           </p>
         </div>
         <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
           <h3 className="text-lg font-bold mb-2">Lightweight</h3>
           <p className="text-gray-400">
-            Tiny bundle size optimized for tree-shaking
+            Tiny bundle size optimized for memory management
           </p>
         </div>
         <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
@@ -148,7 +148,7 @@ export default function Hero() {
         <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
           <h3 className="text-lg font-bold mb-2">Typed Utils</h3>
           <p className="text-gray-400">
-            Flexible programmatic Utils with extensive TypeScript typing
+            Flexible programmatic utilities with extensive TypeScript typing
           </p>
         </div>
       </div>
