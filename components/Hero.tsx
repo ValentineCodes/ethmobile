@@ -1,11 +1,14 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
 
 import { RxClipboardCopy } from "react-icons/rx";
 import { TiTickOutline } from "react-icons/ti";
 
 export default function Hero() {
   const [isCopied, setIsCopied] = useState(false);
+  const [showWhy, setShowWhy] = useState(false);
 
   const copyCommand = async () => {
     try {
@@ -42,8 +45,14 @@ export default function Hero() {
 
           {/* Action buttons */}
           <div className="flex gap-4 mb-12">
-            <button className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-600">
+            <button className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800">
               Get started
+            </button>
+            <button
+              onClick={() => setShowWhy(true)}
+              className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
+            >
+              Why SEM?
             </button>
             <Link
               href="https://github.com/dewdrip/scaffold-eth-mobile"
@@ -140,6 +149,55 @@ export default function Hero() {
           </p>
         </div>
       </div>
+
+      {showWhy && (
+        <motion.div
+          initial={{ opacity: 0, backgroundColor: "rgba(0,0,0,0)" }}
+          animate={{ opacity: 1, backgroundColor: "rgba(0,0,0,0.3)" }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          onClick={() => setShowWhy(false)}
+          className="absolute w-full h-screen top-0 left-0 flex flex-col justify-center items-center"
+        >
+          <div className="w-[80%] max-h-[500px] max-w-[500px] bg-white p-6 rounded-lg flex flex-col gap-4 text-gray-600 text-sm overflow-y-scroll">
+            <div className="flex items-center justify-between">
+              <h1 className="text-lg text-black">THE VISION</h1>
+              <IoCloseOutline
+                className="text-3xl cursor-pointer"
+                onClick={() => setShowWhy(false)}
+              />
+            </div>
+
+            <p>
+              The goal IS NOT to build a template for React Native Developers to
+              build native dApps... Well, NOT QUITE!
+            </p>
+
+            <p>
+              Since the beginning, web3 has tunnel visioned and left the mobile
+              sector unattended; A sector with the potential to onboard a lot
+              more users into web3 due to its affordability, accessibility, and
+              portability... Busta Rhymes!
+            </p>
+
+            <Link
+              href="https://vwo.com/blog/10-reasons-mobile-apps-are-better/"
+              target="_blank"
+              className="text-purple-400 hover:text-purple-500 duration-200"
+            >
+              Why mobile apps are better
+            </Link>
+
+            <p>
+              Scaffold-ETH-Mobile will serve as the foundation of THE NEW WAVE
+              of mobile dApps by creating the best experience for mobile users.
+              We aim to inspire founders to scale, to provide job opportunities,
+              and to grow the web3 community through smooth transitioning.
+            </p>
+
+            <p>Let's make web3 the best space to be! 🚀</p>
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 }
