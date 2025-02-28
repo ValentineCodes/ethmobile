@@ -2,7 +2,6 @@ import React from "react";
 
 import { motion } from "framer-motion";
 import { IoWalletOutline } from "react-icons/io5";
-import Image from "next/image";
 
 type Props = {};
 
@@ -79,8 +78,13 @@ export default function PauxWallet({}: Props) {
           scale: 1,
         }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
+        className="w-full"
       >
-        <img alt="Wallet" src="/images/wallet.png" className="min-w-[600px]" />
+        <img
+          alt="Wallet"
+          src="/images/wallet.png"
+          className="object-cover -ml-12 md:-ml-32"
+        />
       </motion.div>
     </div>
   );

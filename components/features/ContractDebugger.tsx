@@ -79,11 +79,12 @@ export default function ContractDebugger({}: Props) {
           scale: 1,
         }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
+        className="w-full"
       >
         <img
           alt="Contract Debugger"
           src="/images/debugger.png"
-          className="min-w-[600px]"
+          className="object-cover -ml-12"
         />
       </motion.div>
     </div>
