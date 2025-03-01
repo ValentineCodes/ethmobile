@@ -1,15 +1,10 @@
 import React from "react";
-import { RiMenu2Fill } from "react-icons/ri";
-import { CgClose } from "react-icons/cg";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 import Image from "next/image";
 
-import { PopoverButton, PopoverPanel } from "@headlessui/react";
 import Link from "next/link";
 
-type Props = {};
-
-export default function Header({}: Props) {
+export default function Header() {
   return (
     <header className="container mx-auto flex justify-between items-center bg-transparent px-6 py-4 space-x-4 h-24">
       <div className="flex relative w-7 aspect-square">

@@ -212,7 +212,7 @@ export default function Hero() {
               and to grow the web3 community through smooth transitioning.
             </p>
 
-            <p>Let's make web3 the best space to be! 🚀</p>
+            <p>Let&apos;s make web3 the best space to be! 🚀</p>
           </div>
         </motion.div>
       )}

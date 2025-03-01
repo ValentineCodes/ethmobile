@@ -3,9 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { IoWalletOutline } from "react-icons/io5";
 
-type Props = {};
-
-export default function PauxWallet({}: Props) {
+export default function PauxWallet() {
   return (
     <div className="px-6 py-14 max-w-[1200px] mx-auto flex flex-col md:flex-row items-center md:justify-between md:space-x-14">
       <div className="container flex flex-col items-center gap-6 md:items-start">

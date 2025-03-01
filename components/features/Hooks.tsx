@@ -3,9 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GiHook } from "react-icons/gi";
 
-type Props = {};
-
-export default function Hooks({}: Props) {
+export default function Hooks() {
   return (
     <section className="px-6 py-14 max-w-[1200px] mx-auto flex flex-col md:flex-row items-center md:justify-between md:space-x-14">
       <div className="container flex-1 flex flex-col items-center gap-6 md:items-start">
@@ -41,7 +39,7 @@ export default function Hooks({}: Props) {
           transition={{ duration: 0.7, ease: "easeInOut", delay: 0.35 }}
         >
           <p className="text-2xl md:text-4xl font-bold leading-tight max-w-sm text-center md:text-left">
-            Custom "Wagmi" hooks and utils for common use cases
+            Custom &quot;Wagmi&quot; hooks and utils for common use cases
           </p>
         </motion.div>
 
@@ -85,7 +83,9 @@ export default function Hooks({}: Props) {
             {"{"} useScaffoldReadContract {"}"}
           </span>
           <span className="text-[#C586C0]">from</span>
-          <span className="text-[#CE9178]">"../hooks/scaffold-eth"</span>
+          <span className="text-[#CE9178]">
+            &quot;../hooks/scaffold-eth&quot;
+          </span>
           <span className=" -ml-2">;</span>
         </div>
 
@@ -95,7 +95,9 @@ export default function Hooks({}: Props) {
             {"{"} CopyableText {"}"}
           </span>
           <span className="text-[#C586C0]">from</span>
-          <span className="text-[#CE9178]">"../components/scaffold-eth"</span>
+          <span className="text-[#CE9178]">
+            &quot;../components/scaffold-eth&quot;
+          </span>
           <span className=" -ml-2">;</span>
         </div>
 
@@ -105,7 +107,9 @@ export default function Hooks({}: Props) {
             {"{"} truncateAddress {"}"}
           </span>
           <span className="text-[#C586C0]">from</span>
-          <span className="text-[#CE9178]">"../utils/scaffold-eth"</span>
+          <span className="text-[#CE9178]">
+            &quot;../utils/scaffold-eth&quot;
+          </span>
           <span className="-ml-2">;</span>
         </div>
 
@@ -124,14 +128,14 @@ export default function Hooks({}: Props) {
         <div className="flex gap-2 ml-4">
           <span className="text-blue-400/75">contractName</span>
           <span className="-ml-2">:</span>
-          <span className="text-[#CE9178]">"YourContract"</span>
+          <span className="text-[#CE9178]">&quot;YourContract&quot;</span>
           <span className="-ml-2">,</span>
         </div>
 
         <div className="flex gap-2 ml-4">
           <span className="text-blue-400/75">functionName</span>
           <span className="-ml-2">:</span>
-          <span className="text-[#CE9178]">"owner"</span>
+          <span className="text-[#CE9178]">&quot;owner&quot;</span>
           <span className="-ml-2">,</span>
         </div>
 

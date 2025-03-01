@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 
 import { IoBugOutline } from "react-icons/io5";
 
-type Props = {};
-
-export default function ContractDebugger({}: Props) {
+export default function ContractDebugger() {
   return (
     <div className="px-6 py-14 max-w-[1200px] mx-auto flex flex-col md:flex-row-reverse items-center md:justify-between md:space-x-14">
       <div className="container flex flex-col items-center gap-6 md:items-start">
