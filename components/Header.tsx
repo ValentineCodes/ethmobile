@@ -30,10 +30,7 @@ export default function Header() {
             <FaTwitter className="text-gray-600 hover:text-black duration-200 text-2xl" />
           </Link>
 
-          <Link
-            href="https://github.com/dewdrip/scaffold-eth-mobile"
-            target="_blank"
-          >
+          <Link href="https://github.com/dewdrip/eth-mobile" target="_blank">
             <FaGithub className="text-gray-600 hover:text-black duration-200 text-2xl" />
           </Link>
         </div>

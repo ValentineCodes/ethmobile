@@ -84,7 +84,7 @@ export default function Hooks() {
           </span>
           <span className="text-[#C586C0]">from</span>
           <span className="text-[#CE9178]">
-            &quot;../hooks/scaffold-eth&quot;
+            &quot;../hooks/eth-mobile&quot;
           </span>
           <span className=" -ml-2">;</span>
         </div>
@@ -96,7 +96,7 @@ export default function Hooks() {
           </span>
           <span className="text-[#C586C0]">from</span>
           <span className="text-[#CE9178]">
-            &quot;../components/scaffold-eth&quot;
+            &quot;../components/eth-mobile&quot;
           </span>
           <span className=" -ml-2">;</span>
         </div>
@@ -108,7 +108,7 @@ export default function Hooks() {
           </span>
           <span className="text-[#C586C0]">from</span>
           <span className="text-[#CE9178]">
-            &quot;../utils/scaffold-eth&quot;
+            &quot;../utils/eth-mobile&quot;
           </span>
           <span className="-ml-2">;</span>
         </div>

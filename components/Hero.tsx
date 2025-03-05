@@ -16,7 +16,7 @@ export default function Hero() {
     try {
       // Copy text to clipboard
       await navigator.clipboard.writeText(
-        "https://github.com/dewdrip/scaffold-eth-mobile.git",
+        "https://github.com/dewdrip/eth-mobile.git",
       );
       setIsCopied(true); // Show "Copied!" effect
 
@@ -31,7 +31,7 @@ export default function Hero() {
     (async () => {
       try {
         const { data: repo } = await axios.get(
-          "https://api.github.com/repos/valentinecodes/scaffold-eth-mobile",
+          "https://api.github.com/repos/valentinecodes/eth-mobile",
         );
         setStarsCount(repo.stargazers_count);
       } catch (error) {
@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="flex flex-col items-center md:items-start">
           {/* Logo */}
           <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold tracking-tight mb-6">
-            Scaffold-ETH Mobile
+            ETH Mobile
           </h1>
 
           {/* Main heading */}
@@ -61,7 +61,7 @@ export default function Hero() {
           {/* Action buttons */}
           <div className="flex gap-4 mb-12">
             <Link
-              href="https://github.com/dewdrip/scaffold-eth-mobile"
+              href="https://github.com/dewdrip/eth-mobile"
               className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800"
             >
               Get started
@@ -70,10 +70,10 @@ export default function Hero() {
               onClick={() => setShowWhy(true)}
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
             >
-              Why SEM?
+              Why ETH Mobile?
             </button>
             <Link
-              href="https://github.com/dewdrip/scaffold-eth-mobile"
+              href="https://github.com/dewdrip/eth-mobile"
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
             >
               GitHub
@@ -93,7 +93,7 @@ export default function Hero() {
               <code>
                 <span className="text-purple-500">git</span>{" "}
                 <span className="text-blue-900">
-                  clone https://github.com/dewdrip/scaffold-eth-mobile
+                  clone https://github.com/dewdrip/eth-mobile
                 </span>
               </code>
 
@@ -113,7 +113,7 @@ export default function Hero() {
           {/* Stats */}
           <div className="flex gap-4 mt-4 md:mt-10">
             <Link
-              href="https://github.com/dewdrip/scaffold-eth-mobile/stargazers"
+              href="https://github.com/dewdrip/eth-mobile/stargazers"
               target="_blank"
             >
               <div className="flex items-center gap-2 bg-gray-100 border hover:bg-gray-200 px-3 py-[0.35rem] rounded-lg">
@@ -125,7 +125,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="https://github.com/dewdrip/scaffold-eth-mobile/blob/main/LICENCE"
+              href="https://github.com/dewdrip/eth-mobile/blob/main/LICENCE"
               target="_blank"
             >
               <div className="flex items-center gap-2 bg-gray-100 border hover:bg-gray-200 px-3 py-[0.35rem] rounded-lg">
