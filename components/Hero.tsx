@@ -70,7 +70,7 @@ export default function Hero() {
               onClick={() => setShowWhy(true)}
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
             >
-              Why ETH Mobile?
+              Why Us?
             </button>
             <Link
               href="https://github.com/dewdrip/eth-mobile"
