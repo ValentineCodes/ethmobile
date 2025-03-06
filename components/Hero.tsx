@@ -210,10 +210,11 @@ export default function Hero() {
             </Link>
 
             <p>
-              <strong className="font-extrabold">ETH Mobile</strong> will serve as the foundation of THE NEW WAVE
-              of mobile dApps by creating the best experience for mobile users.
-              We aim to inspire founders to scale, to provide job opportunities,
-              and to grow the web3 community through smooth transitioning.
+              <strong className="font-extrabold">ETH Mobile</strong> will serve
+              as the foundation of THE NEW WAVE of mobile dApps by creating the
+              best experience for mobile users. We aim to inspire founders to
+              scale, to provide job opportunities, and to grow the web3
+              community through smooth transitioning.
             </p>
 
             <p>Let&apos;s make web3 the best space to be! 🚀</p>

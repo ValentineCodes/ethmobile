@@ -1,82 +1,31 @@
 import React from "react";
 
-import { motion } from "framer-motion";
 import { GiHook } from "react-icons/gi";
 
 export default function Hooks() {
   return (
     <section className="px-6 py-14 max-w-[1200px] mx-auto flex flex-col md:flex-row items-center md:justify-between md:space-x-14">
       <div className="container flex-1 flex flex-col items-center gap-6 md:items-start">
-        <motion.div
-          initial={{
-            x: 100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.2 }}
-          className="flex flex-col items-center md:items-start gap-2"
-        >
+        <div className="flex flex-col items-center md:items-start gap-2">
           <GiHook className="text-3xl font-extrabold" />
           <h1 className="text-xl font-extralight">HOOKS AND UTILS</h1>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{
-            x: 100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.35 }}
-        >
+        <div>
           <p className="text-2xl md:text-4xl font-bold leading-tight max-w-sm text-center md:text-left">
             Custom &quot;Wagmi&quot; hooks and utils for common use cases
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{
-            x: 100,
-            opacity: 0,
-            scale: 0.8,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.35 }}
-        >
+        <div>
           <p className="text-md max-w-xs text-center md:text-left">
             Designed to simplify interactions with your wallet and smart
             contracts
           </p>
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        initial={{
-          x: -100,
-          opacity: 0,
-          scale: 0.8,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="w-full max-w-[540px] mt-12 md:mt-0 flex flex-col border-[20px] border-white gap-2 bg-blue-50 p-6 rounded-2xl font-mono text-xs overflow-x-scroll shadow-[0_3px_10px_rgb(0,0,100,0.2)]"
-      >
+      <div className="w-full max-w-[540px] mt-12 md:mt-0 flex flex-col border-[20px] border-white gap-2 bg-blue-50 p-6 rounded-2xl font-mono text-xs overflow-x-scroll shadow-[0_3px_10px_rgb(0,0,100,0.2)]">
         <div className="flex gap-2 whitespace-nowrap">
           <span className="text-[#C586C0]">import</span>
           <span>
@@ -165,7 +114,7 @@ export default function Hooks() {
         <div className="flex">
           <span className="text-[#808080]">/&gt;</span>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
