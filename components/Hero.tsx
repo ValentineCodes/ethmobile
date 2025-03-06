@@ -42,7 +42,7 @@ export default function Hero() {
 
   return (
     <section className="p-6 max-w-[1200px] mx-auto">
-      <div className="flex flex-col md:flex-row items-center md:items-start justify-between md:justify-between md:space-x-14 md:mt-14">
+      <div className="flex flex-col md:flex-row items-center md:items-end justify-between md:justify-between md:space-x-14 md:mt-14">
         <div className="flex flex-col items-center md:items-start">
           {/* Logo */}
           <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold tracking-tight mb-6">
@@ -59,16 +59,16 @@ export default function Hero() {
           </p>
 
           {/* Action buttons */}
-          <div className="flex gap-4 mb-12">
+          <div className="flex gap-4 mb-12 md:mb-0">
             <Link
               href="https://github.com/dewdrip/eth-mobile"
-              className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800"
+              className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800 whitespace-nowrap"
             >
               Get started
             </Link>
             <button
               onClick={() => setShowWhy(true)}
-              className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
+              className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600 whitespace-nowrap"
             >
               Why Us?
             </button>
@@ -89,13 +89,17 @@ export default function Hero() {
                 git
               </button>
             </div>
-            <div className="p-4 pb-4 pr-20 text-left bg-gray-100 relative">
-              <code>
-                <span className="text-purple-500">git</span>{" "}
-                <span className="text-blue-900">
-                  clone https://github.com/dewdrip/eth-mobile
-                </span>
-              </code>
+            <div className="p-4 pb-7 pr-20 text-left bg-gray-100 relative">
+              <div className="overflow-x-auto whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none]">
+                <code>
+                  <span className="text-purple-500">
+                    git{" "}
+                    <span className="text-blue-900">
+                      clone https://github.com/dewdrip/eth-mobile
+                    </span>
+                  </span>{" "}
+                </code>
+              </div>
 
               <button
                 onClick={copyCommand}

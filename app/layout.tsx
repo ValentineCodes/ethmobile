@@ -6,7 +6,8 @@ const font = Poppins({ subsets: ["latin"], weight: "300" });
 
 export const metadata: Metadata = {
   title: "ETH Mobile | The Foundation of Mobile dApps",
-  description: "Build native mobile dApps with your own custom in-app wallet using React Native",
+  description:
+    "Build native mobile dApps with your own custom in-app wallet using React Native",
 };
 
 export default function RootLayout({
