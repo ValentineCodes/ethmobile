@@ -90,7 +90,7 @@ export default function Hero() {
               </button>
             </div>
             <div className="p-4 pb-7 pr-20 text-left bg-gray-100 relative">
-              <div className="overflow-x-auto whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none]">
+              <div className="overflow-x-auto whitespace-nowrap scrollbar-hide">
                 <code>
                   <span className="text-purple-500">
                     git{" "}

@@ -25,7 +25,7 @@ export default function Hooks() {
         </div>
       </div>
 
-      <div className="w-full max-w-[540px] mt-12 md:mt-0 flex flex-col border-[20px] border-white gap-2 bg-blue-50 p-6 rounded-2xl font-mono text-xs overflow-x-scroll shadow-[0_3px_10px_rgb(0,0,100,0.2)]">
+      <div className="w-full max-w-[540px] mt-12 md:mt-0 flex flex-col border-[20px] border-white gap-2 bg-blue-50 p-6 rounded-2xl font-mono text-xs overflow-x-scroll scrollbar-hide shadow-[0_3px_10px_rgb(0,0,100,0.2)]">
         <div className="flex gap-2 whitespace-nowrap">
           <span className="text-[#C586C0]">import</span>
           <span>
