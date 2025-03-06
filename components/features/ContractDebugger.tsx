@@ -30,7 +30,7 @@ export default function ContractDebugger() {
         <img
           alt="Contract Debugger"
           src="/images/debugger.png"
-          className="object-cover -ml-12"
+          className="object-cover -ml-12 md:-ml-20"
         />
       </div>
     </div>
