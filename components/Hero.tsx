@@ -31,7 +31,7 @@ export default function Hero() {
     (async () => {
       try {
         const { data: repo } = await axios.get(
-          "https://api.github.com/repos/valentinecodes/eth-mobile",
+          "https://api.github.com/repos/dewdrip/eth-mobile",
         );
         setStarsCount(repo.stargazers_count);
       } catch (error) {
