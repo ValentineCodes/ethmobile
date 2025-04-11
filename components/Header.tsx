@@ -19,7 +19,6 @@ export default function Header() {
           <li>
             <Link
               href="https://docs.ethmobile.io"
-              target="_blank"
               className="hover:text-black duration-300"
             >
               Docs
@@ -62,7 +61,6 @@ export default function Header() {
           <li>
             <Link
               href="https://docs.ethmobile.io"
-              target="_blank"
               className="block p-4 hover:bg-black hover:bg-opacity-10 duration-200"
             >
               Docs
