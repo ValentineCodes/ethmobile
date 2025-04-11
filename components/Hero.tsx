@@ -6,6 +6,7 @@ import { IoCloseOutline } from "react-icons/io5";
 
 import { RxClipboardCopy } from "react-icons/rx";
 import { TiTickOutline } from "react-icons/ti";
+import { GoHeart } from "react-icons/go";
 
 export default function Hero() {
   const [isCopied, setIsCopied] = useState(false);
@@ -115,7 +116,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="flex gap-4 mt-4 md:mt-10">
+          <div className="flex items-center gap-4 mt-4 md:mt-10">
             <Link
               href="https://github.com/dewdrip/eth-mobile/stargazers"
               target="_blank"
@@ -138,6 +139,16 @@ export default function Hero() {
                 </span>
                 <span className="text-sm font-bold">MIT</span>
               </div>
+            </Link>
+
+            <Link
+              href="https://explorer.gitcoin.co/#/round/42161/863/17"
+              target="_blank"
+            >
+              <GoHeart
+                className="text-2xl hover:text-3xl duration-200"
+                color="#ff819f"
+              />
             </Link>
           </div>
         </div>
