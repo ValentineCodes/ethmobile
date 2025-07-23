@@ -141,7 +141,7 @@ export default function Hero() {
               </div>
             </Link>
 
-            <Link
+            {/* <Link
               href="https://explorer.gitcoin.co/#/round/42161/863/17"
               target="_blank"
             >
@@ -149,7 +149,7 @@ export default function Hero() {
                 className="text-2xl hover:text-3xl duration-200"
                 color="#ff819f"
               />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
