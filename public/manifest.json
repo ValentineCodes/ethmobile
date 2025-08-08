@@ -1,0 +1,25 @@
+{
+  "name": "ETH Mobile",
+  "short_name": "ETH Mobile",
+  "description": "Build native mobile dApps with your own custom in-app wallet using React Native",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fb923c",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "farcaster": {
+    "version": "1.0.0",
+    "name": "ETH Mobile",
+    "description": "Build native mobile dApps with your own custom in-app wallet using React Native",
+    "homeUrl": "/",
+    "iconUrl": "/images/logo.png",
+    "splashImageUrl": "/images/logo.png",
+    "splashBackgroundColor": "#ffffff"
+  }
+}

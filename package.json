@@ -10,13 +10,14 @@
     "format": "prettier --write . '!(node_modules|.next|contracts)/**/*'"
   },
   "dependencies": {
+    "@farcaster/miniapp-sdk": "^0.1.8",
     "@headlessui/react": "^2.2.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "axios": "^1.8.1",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "framer-motion": "^12.4.7",
-    "next": "15.1.7",
+    "next": "^15.4.6",
     "prettier": "^3.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
