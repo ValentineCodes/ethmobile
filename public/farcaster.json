@@ -1,0 +1,12 @@
+{
+  "miniapp": {
+    "version": "1",
+    "name": "ETH Mobile",
+    "iconUrl": "https://ethmobile.io/images/logo.png",
+    "homeUrl": "https://ethmobile.io",
+    "splashImageUrl": "https://ethmobile.io/images/logo.png",
+    "splashBackgroundColor": "#ffffff",
+    "requiredChains": ["eip155:1"],
+    "requiredCapabilities": ["actions.signIn", "wallet.getEthereumProvider"]
+  }
+}

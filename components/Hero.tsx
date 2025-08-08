@@ -73,11 +73,18 @@ export default function Hero() {
               Why Us?
             </button>
             <Link
-              href="https://github.com/dewdrip/eth-mobile"
+              href="https://t.me/ethmobile_io"
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
             >
-              GitHub
+              Join Telegram
             </Link>
+          </div>
+          
+          {/* Clean one-liner */}
+          <div className="text-center mt-6">
+            <p className="text-lg text-gray-400">
+              Re-use your <span className="text-black">miniapp</span> code
+            </p>
           </div>
         </div>
 
@@ -169,6 +176,56 @@ export default function Hero() {
           <p className="text-gray-400">
             Flexible programmatic utilities with extensive TypeScript typing
           </p>
+        </div>
+      </div>
+
+      {/* Miniapp to Mobile section - moved up to fill whitespace */}
+      <div className="mt-16">
+        <div className="text-center mb-8">
+          <div className="flex justify-center items-center gap-2 mb-4">
+            <span className="text-2xl">🚀</span>
+            <h3 className="text-xl font-extralight text-gray-600">MINIAPP TO MOBILE</h3>
+          </div>
+          <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
+            From Farcaster Miniapp to{" "}
+            <span className="text-black">Native Mobile App</span>
+          </h4>
+          <p className="text-md text-gray-400 max-w-2xl mx-auto">
+            ETH Mobile is perfectly positioned to help you scale your successful Farcaster miniapp 
+            into a full-featured native mobile application, reusing your existing React codebase.
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-r from-gray-800 to-gray-100 rounded-2xl p-6 text-white text-center">
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <div className="flex items-center gap-2 bg-black/30 rounded-full px-3 py-2">
+              <span className="text-lg">🔮</span>
+              <span className="font-medium text-sm">Farcaster Miniapp</span>
+            </div>
+            <span className="text-xl">→</span>
+            <div className="flex items-center gap-2 bg-black/30 rounded-full px-3 py-2">
+              <span className="text-lg">📱</span>
+              <span className="font-medium text-sm">Native Mobile App</span>
+            </div>
+          </div>
+          <h5 className="text-lg font-bold mb-3">Ready to Make the Jump?</h5>
+          <p className="text-sm mb-4 opacity-90">
+            Join successful Farcaster projects that have scaled to native mobile apps.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="#contact"
+              className="px-4 py-2 bg-orange-400 hover:bg-orange-500 text-gray-800 rounded-lg font-bold transition-colors text-sm"
+            >
+              Get Started Today
+            </a>
+            <a
+              href="https://docs.ethmobile.io"
+              className="px-4 py-2 border border-white/30 rounded-lg font-bold hover:bg-white/10 transition-colors text-sm"
+            >
+              View Documentation
+            </a>
+          </div>
         </div>
       </div>
 
