@@ -47,11 +47,17 @@ export function useProfileData(fid: number, fallbackData?: Partial<ProfileData>)
       }
 
       try {
-        // Use the public Farcaster API to get profile data
-        const response = await fetch(`https://api.farcaster.xyz/v2/user?fid=${fid}`);
+        // Use our internal API route to avoid CORS issues on Vercel
+        const response = await fetch(`/api/farcaster/user?fid=${fid}`);
         
         if (response.ok) {
           const apiResponse = await response.json();
+          
+          // Check if the API returned an error
+          if (apiResponse.error) {
+            throw new Error(`API Error: ${apiResponse.error} - ${apiResponse.details || ''}`);
+          }
+          
           const userData = apiResponse.result?.user;
           
           if (userData) {
@@ -72,10 +78,12 @@ export function useProfileData(fid: number, fallbackData?: Partial<ProfileData>)
             throw new Error('No user data in API response');
           }
         } else {
-          throw new Error(`API response not ok: ${response.status}`);
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(`API response not ok: ${response.status} - ${errorData.error || 'Unknown error'}`);
         }
       } catch (error) {
         // API fetch failed, using fallback data
+        console.error(`Failed to fetch profile for FID ${fid}:`, error);
         
         // Use fallback data if API fails
         const fallbackProfile: ProfileData = {
