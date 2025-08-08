@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
+import Image from "next/image";
 
 import { RxClipboardCopy } from "react-icons/rx";
 import { TiTickOutline } from "react-icons/ti";
+import { useFarcasterContext } from "@/hooks/useFarcasterContext";
 
 export default function Hero() {
   const [isCopied, setIsCopied] = useState(false);
   const [showWhy, setShowWhy] = useState(false);
   const [starsCount, setStarsCount] = useState("");
+  const { isInFarcaster, user } = useFarcasterContext();
 
   const copyCommand = async () => {
     try {
@@ -41,7 +44,30 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="p-6 max-w-[1200px] mx-auto">
+    <section className="p-6 max-w-[1200px] mx-auto bg-white">
+      {/* Farcaster Welcome Message */}
+      {isInFarcaster && user && (
+        <div className="text-center mb-8">
+          <div className="flex justify-center items-center gap-3 mb-2">
+            <div className="relative w-8 h-8">
+              <Image
+                alt={user.displayName}
+                fill
+                src={user.pfpUrl || '/images/logo.png'}
+                className="rounded-full object-cover border-2 border-gray-200"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/images/logo.png';
+                }}
+                unoptimized={true}
+              />
+            </div>
+            <span className="text-lg text-gray-600">
+              Welcome, <span className="font-bold text-black">{user.displayName}</span>
+            </span>
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col md:flex-row items-center md:items-end justify-between md:justify-between md:space-x-14 md:mt-14">
         <div className="flex flex-col items-center md:items-start">
           {/* Logo */}
@@ -64,14 +90,14 @@ export default function Hero() {
               href="https://docs.ethmobile.io"
               className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800 whitespace-nowrap"
             >
-              Get started
+              Docs
             </Link>
-            <button
-              onClick={() => setShowWhy(true)}
+            <a
+              href="#contact"
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600 whitespace-nowrap"
             >
               Why Us?
-            </button>
+            </a>
             <Link
               href="https://t.me/ethmobile_io"
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
