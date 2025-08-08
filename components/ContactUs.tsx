@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { sdk } from "@farcaster/miniapp-sdk";
-import { useFarcasterContext } from "@/hooks/useFarcasterContext";
+import { motion } from "framer-motion";
+import { IoCloseOutline } from "react-icons/io5";
+import ProfileCard from "./ProfileCard";
 
 // Farcaster icon component
 const FarcasterIcon = ({ className }: { className?: string }) => (
@@ -18,54 +18,36 @@ const FarcasterIcon = ({ className }: { className?: string }) => (
 );
 
 export default function ContactUs() {
-  const { isInFarcaster } = useFarcasterContext();
+  const [showWhy, setShowWhy] = useState(false);
 
   const team = [
     {
       name: "Tanto DeFi",
       handle: "tantodefi",
-      fid: 2, // TODO: Replace with actual FID from Farcaster profile
+      fid: 368428, // Real FID from Farcaster fname registry
       bio: "Building the future of mobile DeFi experiences. Passionate about creating user-friendly Web3 applications that work seamlessly on mobile devices.",
       profileUrl: "https://warpcast.com/tantodefi",
-      avatar: "/images/logo.png", // fallback avatar
+      avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
     },
     {
       name: "Valentine Orga", 
       handle: "valentineorga",
-      fid: 3, // TODO: Replace with actual FID from Farcaster profile  
+      fid: 396317, // Real FID from Farcaster fname registry
       bio: "Mobile-first Web3 developer and architect. Specializing in React Native and Ethereum integrations for next-generation dApps.",
       profileUrl: "https://warpcast.com/valentineorga",
-      avatar: "/images/logo.png", // fallback avatar
+      avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
     },
     {
       name: "Remy Codes",
       handle: "remycodes",
-      fid: 4, // TODO: Replace with actual FID from Farcaster profile
+      fid: 999999, // Placeholder FID - will update when fname is registered
       bio: "Full-stack developer focused on Web3 infrastructure and mobile development. Expert in bridging traditional web technologies with blockchain innovations.",
       profileUrl: "https://warpcast.com/remycodes",
-      avatar: "/images/logo.png", // fallback avatar
+      avatar: "/images/logo.png", // fallback avatar until real profile available
     },
   ];
 
-  const handleViewProfile = async (fid: number, fallbackUrl: string) => {
-    if (isInFarcaster) {
-      try {
-        // Use the SDK's viewProfile action for native profile preview
-        await sdk.actions.viewProfile({ fid });
-      } catch (error) {
-        console.log('Error showing profile preview:', error);
-        // Fallback to opening URL
-        try {
-          await sdk.actions.openUrl(fallbackUrl);
-        } catch (urlError) {
-          console.log('Error opening URL:', urlError);
-          window.open(fallbackUrl, '_blank');
-        }
-      }
-    } else {
-      window.open(fallbackUrl, '_blank');
-    }
-  };
+
 
   return (
     <section id="contact" className="bg-gray-50 py-16">
@@ -84,44 +66,14 @@ export default function ContactUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {team.map((member) => (
-            <div
+            <ProfileCard
               key={member.handle}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div className="flex items-start space-x-4 mb-4">
-                <div className="relative w-16 h-16">
-                  <Image
-                    alt={member.name}
-                    fill
-                    src={member.avatar}
-                    className="rounded-full object-cover border-2 border-purple-200"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/images/logo.png';
-                    }}
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                  <p className="text-gray-600 font-medium">@{member.handle}</p>
-                </div>
-                <button
-                  onClick={() => handleViewProfile(member.fid, member.profileUrl)}
-                  className="p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                >
-                  <FarcasterIcon className="w-6 h-6 text-gray-600" />
-                </button>
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                {member.bio}
-              </p>
-              <button
-                onClick={() => handleViewProfile(member.fid, member.profileUrl)}
-                className="inline-flex items-center space-x-2 text-gray-600 hover:text-black font-medium text-sm transition-colors"
-              >
-                <FarcasterIcon className="w-4 h-4" />
-                <span>View on Farcaster</span>
-              </button>
-            </div>
+              name={member.name}
+              handle={member.handle}
+              fid={member.fid}
+              bio={member.bio}
+              profileUrl={member.profileUrl}
+            />
           ))}
         </div>
 
@@ -132,23 +84,82 @@ export default function ContactUs() {
             our team has the expertise to bring your mobile dApp vision to life. 
             We&apos;ll help you reuse your existing Next.js codebase and create a seamless mobile experience.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => handleViewProfile(team[0].fid, team[0].profileUrl)}
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-orange-400 hover:bg-orange-500 text-gray-800 rounded-lg font-bold transition-colors"
-            >
-              <FarcasterIcon className="w-5 h-5" />
-              <span>Message on Farcaster</span>
-            </button>
-            <Link
-              href="https://docs.ethmobile.io"
-              className="px-6 py-3 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-lg font-bold transition-colors"
-            >
-              Explore Documentation
-            </Link>
-          </div>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link
+                          href={team[0].profileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 px-6 py-3 bg-orange-400 hover:bg-orange-500 text-gray-800 rounded-lg font-bold transition-colors"
+                        >
+                          <FarcasterIcon className="w-5 h-5" />
+                          <span>Message on Farcaster</span>
+                        </Link>
+                        <button
+                          onClick={() => setShowWhy(true)}
+                          className="px-6 py-3 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-lg font-bold transition-colors"
+                        >
+                          Why Us?
+                        </button>
+                        <Link
+                          href="https://docs.ethmobile.io"
+                          className="px-6 py-3 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-lg font-bold transition-colors"
+                        >
+                          Explore Documentation
+                        </Link>
+                      </div>
         </div>
       </div>
+
+      {/* Why Us Modal */}
+      {showWhy && (
+        <motion.div
+          initial={{ opacity: 0, backgroundColor: "rgba(0,0,0,0)" }}
+          animate={{ opacity: 1, backgroundColor: "rgba(0,0,0,0.3)" }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          onClick={() => setShowWhy(false)}
+          className="fixed w-full h-screen top-0 left-0 flex flex-col justify-center items-center z-50"
+        >
+          <div className="w-[80%] max-h-[500px] max-w-[500px] bg-white p-6 rounded-lg flex flex-col gap-4 text-gray-600 text-sm overflow-y-scroll">
+            <div className="flex items-center justify-between">
+              <h1 className="text-lg text-black">THE VISION</h1>
+              <IoCloseOutline
+                className="text-3xl cursor-pointer"
+                onClick={() => setShowWhy(false)}
+              />
+            </div>
+
+            <p>
+              The goal IS NOT to build a template for React Native Developers to
+              build native dApps... Well, NOT QUITE!
+            </p>
+
+            <p>
+              Since the beginning, web3 has tunnel visioned and left the mobile
+              sector unattended; A sector with the potential to onboard a lot
+              more users into web3 due to its affordability, accessibility, and
+              portability... Busta Rhymes!
+            </p>
+
+            <Link
+              href="https://vwo.com/blog/10-reasons-mobile-apps-are-better/"
+              target="_blank"
+              className="text-purple-400 hover:text-purple-500 duration-200"
+            >
+              Why mobile apps are better
+            </Link>
+
+            <p>
+              <strong className="font-extrabold">ETH Mobile</strong> will serve
+              as the foundation of THE NEW WAVE of mobile dApps by creating the
+              best experience for mobile users. We aim to inspire founders to
+              scale, to provide job opportunities, and to grow the web3
+              community through smooth transitioning.
+            </p>
+
+            <p>Let&apos;s make web3 the best space to be! 🚀</p>
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 }

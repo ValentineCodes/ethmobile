@@ -1,0 +1,25 @@
+{
+  "accountAssociation": {
+    "header": "farcaster-miniapp-manifest",
+    "payload": "eyJkb21haW4iOiJldGhtb2JpbGUuaW8ifQ"
+  },
+  "frame": {
+    "version": "next",
+    "name": "ETH Mobile",
+    "iconUrl": "https://ethmobile.io/images/logo.png",
+    "homeUrl": "https://ethmobile.io",
+    "imageUrl": "https://ethmobile.io/images/logo.png",
+    "splashImageUrl": "https://ethmobile.io/images/logo.png",
+    "splashBackgroundColor": "#ffffff",
+    "button": {
+      "title": "🚀 Launch ETH Mobile",
+      "action": {
+        "type": "launch_frame",
+        "name": "ETH Mobile",
+        "url": "https://ethmobile.io",
+        "splashImageUrl": "https://ethmobile.io/images/logo.png",
+        "splashBackgroundColor": "#ffffff"
+      }
+    }
+  }
+}

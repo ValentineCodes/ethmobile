@@ -6,38 +6,14 @@ import Link from "next/link";
 import { PopoverButton, PopoverPanel } from "@headlessui/react";
 import { CgClose } from "react-icons/cg";
 import { RiMenu2Fill } from "react-icons/ri";
-import { useFarcasterContext } from "@/hooks/useFarcasterContext";
 
 export default function Header() {
-  const { isInFarcaster, user } = useFarcasterContext();
-
   return (
-    <header className="container mx-auto flex justify-between items-center bg-transparent px-6 py-4 space-x-4 h-24">
+    <header className="container mx-auto flex justify-between items-center bg-white px-6 py-4 space-x-4 h-24">
       <div className="flex items-center space-x-3">
         <div className="flex relative w-7 aspect-square">
           <Image alt="Logo" fill src="/images/logo.png" />
         </div>
-        {isInFarcaster && user && (
-          <div className="flex items-center space-x-2 bg-gray-100 border border-gray-200 rounded-full px-3 py-1 max-w-xs">
-            <div className="relative w-6 h-6 flex-shrink-0">
-              <Image
-                alt={user.displayName}
-                fill
-                src={user.pfpUrl}
-                className="rounded-full object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/images/logo.png';
-                }}
-              />
-            </div>
-            <span className="text-sm text-gray-700 font-medium truncate">
-              {user.displayName}
-            </span>
-            <span className="text-xs text-gray-500 hidden sm:inline">
-              (Farcaster)
-            </span>
-          </div>
-        )}
       </div>
 
       <nav className="flex items-center space-x-6">

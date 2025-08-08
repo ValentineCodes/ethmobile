@@ -21,10 +21,9 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="fc:frame" content="vNext" />
-        <meta name="fc:frame:image" content="/images/logo.png" />
+        <meta name="fc:frame" content='{"version":"next","imageUrl":"https://ethmobile.io/images/logo.png","button":{"title":"🚀 Launch ETH Mobile","action":{"type":"launch_frame","name":"ETH Mobile","url":"https://ethmobile.io","splashImageUrl":"https://ethmobile.io/images/logo.png","splashBackgroundColor":"#ffffff"}}}' />
       </head>
-      <body className={font.className}>{children}</body>
+      <body className={`${font.className} bg-white`}>{children}</body>
     </html>
   );
 }

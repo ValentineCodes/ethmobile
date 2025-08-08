@@ -26,8 +26,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="text-black">
-      <Popover className="relative min-h-screen w-full">
+    <main className="text-black bg-white">
+      <Popover className="relative min-h-screen w-full bg-white">
         <Header />
         <Hero />
       </Popover>
@@ -36,7 +36,7 @@ export default function Home() {
         <PauxWallet />
       </section>
 
-      <section id="debugger">
+      <section id="debugger" className="bg-white">
         <ContractDebugger />
       </section>
 
