@@ -17,9 +17,9 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="flex items-center space-x-6">
+      <nav className="flex items-center space-x-4">
         <ul className="hidden lg:flex items-center justify-between space-x-6 text-sm text-gray-600 font-light">
-          <li>
+          <li className="cursor-pointer">
             <Link
               href="https://docs.ethmobile.io"
               className="hover:text-black duration-300"
@@ -29,7 +29,7 @@ export default function Header() {
           </li>
         </ul>
 
-        <div className="flex space-x-6">
+        <div className="flex space-x-4">
           <Link href="https://t.me/ethmobile_io" target="_blank">
             <FaTelegram className="text-gray-600 hover:text-black duration-200 text-2xl" />
           </Link>
