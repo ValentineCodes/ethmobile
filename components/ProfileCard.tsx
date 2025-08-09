@@ -12,8 +12,8 @@ const FarcasterIcon = ({ className }: { className?: string }) => (
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M257.778 155.556H742.222V844.444H671.111V528.889H670.414C662.554 441.677 589.258 373.333 500 373.333C410.742 373.333 337.446 441.677 329.586 528.889H328.889V844.444H257.778V155.556Z"/>
-    <path d="M128.889 253.333L157.778 351.111H182.222V746.667C182.222 790.498 218.058 826.333 261.889 826.333H738.111C781.942 826.333 817.778 790.498 817.778 746.667V351.111H842.222L871.111 253.333H746.667V155.556C746.667 69.8016 676.865 0 591.111 0H408.889C323.135 0 253.333 69.8016 253.333 155.556V253.333H128.889ZM591.111 746.667H408.889V528.889C408.889 478.595 450.373 437.111 500.778 437.111C551.182 437.111 592.667 478.595 592.667 528.889V746.667H591.111Z"/>
+    <path d="M257.778 155.556H742.222V844.444H671.111V528.889H670.414C662.554 441.677 589.258 373.333 500 373.333C410.742 373.333 337.446 441.677 329.586 528.889H328.889V844.444H257.778V155.556Z" />
+    <path d="M128.889 253.333L157.778 351.111H182.222V746.667C182.222 790.498 218.058 826.333 261.889 826.333H738.111C781.942 826.333 817.778 790.498 817.778 746.667V351.111H842.222L871.111 253.333H746.667V155.556C746.667 69.8016 676.865 0 591.111 0H408.889C323.135 0 253.333 69.8016 253.333 155.556V253.333H128.889ZM591.111 746.667H408.889V528.889C408.889 478.595 450.373 437.111 500.778 437.111C551.182 437.111 592.667 478.595 592.667 528.889V746.667H591.111Z" />
   </svg>
 );
 
@@ -25,9 +25,19 @@ interface ProfileCardProps {
   profileUrl: string;
 }
 
-export default function ProfileCard({ name, handle, fid, bio, profileUrl }: ProfileCardProps) {
+export default function ProfileCard({
+  name,
+  handle,
+  fid,
+  bio,
+  profileUrl,
+}: ProfileCardProps) {
   const { isInFarcaster } = useFarcasterContext();
-  const { profile, isLoading } = useProfileData(fid, { username: handle, displayName: name, bio });
+  const { profile, isLoading } = useProfileData(fid, {
+    username: handle,
+    displayName: name,
+    bio,
+  });
 
   const handleViewProfile = async () => {
     if (isInFarcaster) {
@@ -37,20 +47,20 @@ export default function ProfileCard({ name, handle, fid, bio, profileUrl }: Prof
           await sdk.actions.viewProfile({ fid });
           return;
         }
-        
+
         // Fallback to opening URL if viewProfile not available or placeholder FID
         if (sdk.actions.openUrl) {
           await sdk.actions.openUrl(profileUrl);
         } else {
-          window.open(profileUrl, '_blank');
+          window.open(profileUrl, "_blank");
         }
       } catch (error) {
-        console.log('Error showing profile:', error);
+        console.log("Error showing profile:", error);
         // Final fallback
-        window.open(profileUrl, '_blank');
+        window.open(profileUrl, "_blank");
       }
     } else {
-      window.open(profileUrl, '_blank');
+      window.open(profileUrl, "_blank");
     }
   };
 
@@ -81,16 +91,18 @@ export default function ProfileCard({ name, handle, fid, bio, profileUrl }: Prof
           <Image
             alt={profile.displayName}
             fill
-            src={profile.pfpUrl || '/images/logo.png'}
+            src={profile.pfpUrl || "/images/logo.png"}
             className="rounded-full object-cover border-2 border-gray-200"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = '/images/logo.png';
+              (e.target as HTMLImageElement).src = "/images/logo.png";
             }}
             unoptimized={true}
           />
         </div>
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-gray-900">{profile.displayName}</h3>
+          <h3 className="text-xl font-bold text-gray-900">
+            {profile.displayName}
+          </h3>
           <p className="text-gray-600 font-medium">@{profile.username}</p>
         </div>
         <button

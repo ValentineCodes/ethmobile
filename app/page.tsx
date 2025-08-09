@@ -18,7 +18,7 @@ export default function Home() {
       try {
         await sdk.actions.ready();
       } catch (error) {
-        console.log('Error initializing miniapp:', error);
+        console.log("Error initializing miniapp:", error);
       }
     };
 

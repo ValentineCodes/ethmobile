@@ -53,16 +53,17 @@ export default function Hero() {
               <Image
                 alt={user.displayName}
                 fill
-                src={user.pfpUrl || '/images/logo.png'}
+                src={user.pfpUrl || "/images/logo.png"}
                 className="rounded-full object-cover border-2 border-gray-200"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/images/logo.png';
+                  (e.target as HTMLImageElement).src = "/images/logo.png";
                 }}
                 unoptimized={true}
               />
             </div>
             <span className="text-lg text-gray-600">
-              Welcome, <span className="font-bold text-black">{user.displayName}</span>
+              Welcome,{" "}
+              <span className="font-bold text-black">{user.displayName}</span>
             </span>
           </div>
         </div>
@@ -105,7 +106,7 @@ export default function Hero() {
               Join Telegram
             </Link>
           </div>
-          
+
           {/* Clean one-liner */}
           <div className="text-center mt-6">
             <p className="text-lg text-gray-400">
@@ -210,15 +211,18 @@ export default function Hero() {
         <div className="text-center mb-8">
           <div className="flex justify-center items-center gap-2 mb-4">
             <span className="text-2xl">🚀</span>
-            <h3 className="text-xl font-extralight text-gray-600">MINIAPP TO MOBILE</h3>
+            <h3 className="text-xl font-extralight text-gray-600">
+              MINIAPP TO MOBILE
+            </h3>
           </div>
           <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
             From Farcaster Miniapp to{" "}
             <span className="text-black">Native Mobile App</span>
           </h4>
           <p className="text-md text-gray-400 max-w-2xl mx-auto">
-            ETH Mobile is perfectly positioned to help you scale your successful Farcaster miniapp 
-            into a full-featured native mobile application, reusing your existing React codebase.
+            ETH Mobile is perfectly positioned to help you scale your successful
+            Farcaster miniapp into a full-featured native mobile application,
+            reusing your existing React codebase.
           </p>
         </div>
 
@@ -236,7 +240,8 @@ export default function Hero() {
           </div>
           <h5 className="text-lg font-bold mb-3">Ready to Make the Jump?</h5>
           <p className="text-sm mb-4 opacity-90">
-            Join successful Farcaster projects that have scaled to native mobile apps.
+            Join successful Farcaster projects that have scaled to native mobile
+            apps.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

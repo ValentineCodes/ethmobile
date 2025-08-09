@@ -1,5 +1,6 @@
 import React from "react";
-import { FaTwitter, FaGithub } from "react-icons/fa";
+import { FaGithub, FaTelegram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
 import Link from "next/link";
@@ -26,16 +27,15 @@ export default function Header() {
               Docs
             </Link>
           </li>
-          {/* <li>
-            <Link href="#builds" className="hover:text-black duration-300">
-              Builds
-            </Link>
-          </li> */}
         </ul>
 
         <div className="flex space-x-6">
-          <Link href="https://x.com/ValentineOrga" target="_blank">
-            <FaTwitter className="text-gray-600 hover:text-black duration-200 text-2xl" />
+          <Link href="https://t.me/ethmobile_io" target="_blank">
+            <FaTelegram className="text-gray-600 hover:text-black duration-200 text-2xl" />
+          </Link>
+
+          <Link href="https://x.com/ethmobile_io" target="_blank">
+            <FaXTwitter className="text-gray-600 hover:text-black duration-200 text-2xl" />
           </Link>
 
           <Link href="https://github.com/dewdrip/eth-mobile" target="_blank">
