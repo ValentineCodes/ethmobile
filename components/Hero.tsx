@@ -91,14 +91,14 @@ export default function Hero() {
               href="https://docs.ethmobile.io"
               className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800 whitespace-nowrap"
             >
-              Docs
+              Get Started
             </Link>
-            <a
-              href="#contact"
+            <button
+              onClick={() => setShowWhy(true)}
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600 whitespace-nowrap"
             >
               Why Us?
-            </a>
+            </button>
             <Link
               href="https://t.me/ethmobile_io"
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
@@ -124,7 +124,7 @@ export default function Hero() {
               </button>
             </div>
             <div className="pr-20 text-left bg-gray-100 relative">
-              <div className="overflow-x-auto whitespace-nowrap py-4 pl-4">
+              <div className="overflow-x-auto whitespace-nowrap scrollbar scrollbar-thumb-orange-400 scrollbar-track-orange-400 py-5 pl-4">
                 <code>
                   <span className="text-purple-500">
                     git{" "}
