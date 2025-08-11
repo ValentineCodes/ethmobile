@@ -22,6 +22,14 @@ export default function ContactUs() {
 
   const team = [
     {
+      name: "Valentine Orga",
+      handle: "valentineorga",
+      fid: 396317, // Real FID from Farcaster fname registry
+      bio: "Mobile-first Web3 developer and smart contract engineer. Specializing in React Native and Ethereum integrations for next-generation dApps.",
+      profileUrl: "https://warpcast.com/valentineorga",
+      avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
+    },
+    {
       name: "Tanto DeFi",
       handle: "tantodefi",
       fid: 368428, // Real FID from Farcaster fname registry
@@ -29,22 +37,14 @@ export default function ContactUs() {
       profileUrl: "https://warpcast.com/tantodefi",
       avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
     },
-    {
-      name: "Valentine Orga",
-      handle: "valentineorga",
-      fid: 396317, // Real FID from Farcaster fname registry
-      bio: "Mobile-first Web3 developer and architect. Specializing in React Native and Ethereum integrations for next-generation dApps.",
-      profileUrl: "https://warpcast.com/valentineorga",
-      avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
-    },
-    {
-      name: "Remy Codes",
-      handle: "remycodes",
-      fid: 999999, // Placeholder FID - will update when fname is registered
-      bio: "Full-stack developer focused on Web3 infrastructure and mobile development. Expert in bridging traditional web technologies with blockchain innovations.",
-      profileUrl: "https://warpcast.com/remycodes",
-      avatar: "/images/logo.png", // fallback avatar until real profile available
-    },
+    // {
+    //   name: "Remy Codes",
+    //   handle: "remycodes",
+    //   fid: 999999, // Placeholder FID - will update when fname is registered
+    //   bio: "Full-stack developer focused on Web3 infrastructure and mobile development. Expert in bridging traditional web technologies with blockchain innovations.",
+    //   profileUrl: "https://warpcast.com/remycodes",
+    //   avatar: "/images/logo.png", // fallback avatar until real profile available
+    // },
   ];
 
   return (
