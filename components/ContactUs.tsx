@@ -37,14 +37,6 @@ export default function ContactUs() {
       profileUrl: "https://warpcast.com/valentineorga",
       avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
     },
-    // {
-    //   name: "Remy Codes",
-    //   handle: "remycodes",
-    //   fid: 999999, // Placeholder FID - will update when fname is registered
-    //   bio: "Full-stack developer focused on Web3 infrastructure and mobile development. Expert in bridging traditional web technologies with blockchain innovations.",
-    //   profileUrl: "https://warpcast.com/remycodes",
-    //   avatar: "/images/logo.png", // fallback avatar until real profile available
-    // },
   ];
 
   return (
