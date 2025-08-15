@@ -22,19 +22,19 @@ export default function ContactUs() {
 
   const team = [
     {
-      name: "Valentine Orga",
-      handle: "valentineorga",
-      fid: 396317, // Real FID from Farcaster fname registry
-      bio: "Mobile-first Web3 developer and smart contract engineer. Specializing in React Native and Ethereum integrations for next-generation dApps.",
-      profileUrl: "https://warpcast.com/valentineorga",
-      avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
-    },
-    {
       name: "Tanto DeFi",
       handle: "tantodefi",
       fid: 368428, // Real FID from Farcaster fname registry
       bio: "Building the future of mobile DeFi experiences. Passionate about creating user-friendly Web3 applications that work seamlessly on mobile devices.",
       profileUrl: "https://warpcast.com/tantodefi",
+      avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
+    },
+    {
+      name: "Valentine Orga",
+      handle: "valentineorga",
+      fid: 396317, // Real FID from Farcaster fname registry
+      bio: "Mobile-first Web3 developer and smart contract engineer. Specializing in React Native and Ethereum integrations for next-generation dApps.",
+      profileUrl: "https://warpcast.com/valentineorga",
       avatar: "/images/logo.png", // Will be dynamically loaded from Farcaster
     },
     // {

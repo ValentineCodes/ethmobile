@@ -10,8 +10,11 @@ import ContactUs from "@/components/ContactUs";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { Popover } from "@headlessui/react";
+import { useFarcasterContext } from "@/hooks/useFarcasterContext";
 
 export default function Home() {
+  const { isInFarcaster, user } = useFarcasterContext();
+
   useEffect(() => {
     // Call ready() to hide the splash screen and display content
     const initializeApp = async () => {
@@ -44,7 +47,7 @@ export default function Home() {
         <Hooks />
       </section>
 
-      <ContactUs />
+      {isInFarcaster && user && <ContactUs />}
     </main>
   );
 }
