@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { Popover } from "@headlessui/react";
 import { useFarcasterContext } from "@/hooks/useFarcasterContext";
+import Sponsors from "@/components/Sponsors";
 
 export default function Home() {
   const { isInFarcaster, user } = useFarcasterContext();
@@ -34,6 +35,10 @@ export default function Home() {
         <Header />
         <Hero />
       </Popover>
+
+      <section id="sponsors" className="bg-white">
+        <Sponsors />
+      </section>
 
       <section id="wallet" className="bg-blue-50">
         <PauxWallet />
