@@ -29,7 +29,7 @@ export default function ContractDebugger() {
       <div className="w-full">
         <img
           alt="Contract Debugger"
-          src="/images/debugger.png"
+          src="https://dewdrip.github.io/eth-mobile/assets/debugger.png"
           className="object-cover -ml-12 md:-ml-20"
         />
       </div>

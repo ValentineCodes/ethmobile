@@ -9,7 +9,7 @@ export default function Sponsors() {
       </h2>
       <div className="flex justify-center items-center h-16">
         <img
-          src="/images/sponsors/gitcoin-logo.png"
+          src="/images/sponsors/gitcoin.png"
           alt="Gitcoin"
           className="object-contain w-64"
         />

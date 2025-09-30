@@ -29,7 +29,7 @@ export default function PauxWallet() {
       <div className="w-full">
         <img
           alt="Wallet"
-          src="/images/wallet.png"
+          src="https://dewdrip.github.io/eth-mobile/assets/wallet.png"
           className="object-cover -ml-12"
         />
       </div>
