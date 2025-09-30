@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="container mx-auto flex justify-between items-center bg-white px-6 py-4 space-x-4 h-24">
       <div className="flex items-center space-x-3">
-        <div className="flex relative w-7 aspect-square">
+        <div className="flex relative w-12 aspect-square">
           <Image alt="Logo" fill src="/images/logo.png" />
         </div>
       </div>
