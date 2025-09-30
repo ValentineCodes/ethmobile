@@ -103,7 +103,7 @@ export default function Hero() {
               href="https://t.me/ethmobile_io"
               className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
             >
-              Join Telegram
+              Telegram
             </Link>
           </div>
 
@@ -282,15 +282,16 @@ export default function Hero() {
             </div>
 
             <p>
-              The goal IS NOT to build a template for React Native Developers to
-              build native dApps... Well, NOT QUITE!
+              We aim not only to build a template for React Native Developers to
+              build native dApps, but to encourage mobile dApp development by
+              facilitating the development and learning process.
             </p>
 
             <p>
               Since the beginning, web3 has tunnel visioned and left the mobile
               sector unattended; A sector with the potential to onboard a lot
               more users into web3 due to its affordability, accessibility, and
-              portability... Busta Rhymes!
+              portability
             </p>
 
             <Link
