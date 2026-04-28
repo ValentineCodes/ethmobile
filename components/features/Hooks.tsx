@@ -53,9 +53,7 @@ export default function Hooks() {
             {"{"} useScaffoldReadContract {"}"}
           </span>
           <span className="text-[#C586C0]">from</span>
-          <span className="text-[#CE9178]">
-            &quot;../hooks/eth-mobile&quot;
-          </span>
+          <span className="text-[#CE9178]">&quot;@/hooks/eth-mobile&quot;</span>
           <span className=" -ml-2">;</span>
         </div>
 
@@ -66,7 +64,7 @@ export default function Hooks() {
           </span>
           <span className="text-[#C586C0]">from</span>
           <span className="text-[#CE9178]">
-            &quot;../components/eth-mobile&quot;
+            &quot;@/components/eth-mobile&quot;
           </span>
           <span className=" -ml-2">;</span>
         </div>
@@ -77,9 +75,7 @@ export default function Hooks() {
             {"{"} truncateAddress {"}"}
           </span>
           <span className="text-[#C586C0]">from</span>
-          <span className="text-[#CE9178]">
-            &quot;../utils/eth-mobile&quot;
-          </span>
+          <span className="text-[#CE9178]">&quot;@/utils/eth-mobile&quot;</span>
           <span className="-ml-2">;</span>
         </div>
 

@@ -130,19 +130,19 @@ export default function Hero() {
           <div className="mb-12 flex flex-wrap gap-3 md:mb-0">
             <Link
               href="https://docs.ethmobile.dev"
-              className="whitespace-nowrap rounded-md bg-[#f97316] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#ea580c]"
+              className="whitespace-nowrap rounded-md bg-[#f97316] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#ea580c]"
             >
               Get Started
             </Link>
             <button
               onClick={() => setShowWhy(true)}
-              className="bg-surface border-theme text-muted whitespace-nowrap rounded-md border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-soft"
+              className="bg-surface border-theme text-muted whitespace-nowrap rounded-md border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-surface-soft"
             >
               Why Us?
             </button>
             <Link
               href="https://t.me/ethmobile_io"
-              className="bg-surface border-theme text-muted rounded-md border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-soft"
+              className="bg-surface border-theme text-muted rounded-md border px-4 py-2.5 text-sm font-medium transition-colors hover:bg-surface-soft"
             >
               Telegram
             </Link>
