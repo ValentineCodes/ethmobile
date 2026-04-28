@@ -6,18 +6,18 @@
   "frame": {
     "version": "next",
     "name": "ETH Mobile",
-    "iconUrl": "https://ethmobile.io/images/logo.png",
-    "homeUrl": "https://ethmobile.io",
-    "imageUrl": "https://ethmobile.io/images/logo.png",
-    "splashImageUrl": "https://ethmobile.io/images/logo.png",
+    "iconUrl": "https://ethmobile.dev/images/logo.png",
+    "homeUrl": "https://ethmobile.dev",
+    "imageUrl": "https://ethmobile.dev/images/logo.png",
+    "splashImageUrl": "https://ethmobile.dev/images/logo.png",
     "splashBackgroundColor": "#ffffff",
     "button": {
       "title": "🚀 Launch ETH Mobile",
       "action": {
         "type": "launch_frame",
         "name": "ETH Mobile",
-        "url": "https://ethmobile.io",
-        "splashImageUrl": "https://ethmobile.io/images/logo.png",
+        "url": "https://ethmobile.dev",
+        "splashImageUrl": "https://ethmobile.dev/images/logo.png",
         "splashBackgroundColor": "#ffffff"
       }
     }

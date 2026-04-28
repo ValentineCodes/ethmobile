@@ -21,7 +21,7 @@ export default function Header() {
         <ul className="hidden lg:flex items-center justify-between space-x-6 text-sm text-gray-600 font-light">
           <li className="cursor-pointer">
             <Link
-              href="https://docs.ethmobile.io"
+              href="https://docs.ethmobile.dev"
               className="hover:text-black duration-300"
             >
               Docs
@@ -62,7 +62,7 @@ export default function Header() {
         <ul className="text-sm text-gray-600 font-light">
           <li>
             <Link
-              href="https://docs.ethmobile.io"
+              href="https://docs.ethmobile.dev"
               className="block p-4 hover:bg-black hover:bg-opacity-10 duration-200"
             >
               Docs

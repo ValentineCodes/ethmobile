@@ -93,7 +93,7 @@ export default function ContactUs() {
               Why Us?
             </button>
             <Link
-              href="https://docs.ethmobile.io"
+              href="https://docs.ethmobile.dev"
               className="px-6 py-3 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-lg font-bold transition-colors"
             >
               Explore Documentation

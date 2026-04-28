@@ -94,7 +94,7 @@ export default function Hero() {
           {/* Action buttons */}
           <div className="flex gap-4 mb-12 md:mb-0">
             <Link
-              href="https://docs.ethmobile.io"
+              href="https://docs.ethmobile.dev"
               className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800 whitespace-nowrap"
             >
               Get Started
@@ -278,7 +278,7 @@ export default function Hero() {
                 Get Started Today
               </a>
               <a
-                href="https://docs.ethmobile.io"
+                href="https://docs.ethmobile.dev"
                 className="px-4 py-2 border border-white/30 rounded-lg font-bold hover:bg-white/10 transition-colors text-sm"
               >
                 View Documentation
