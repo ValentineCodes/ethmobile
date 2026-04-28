@@ -20,18 +20,20 @@ export default function ContractDebugger() {
         className="container flex flex-col items-center gap-6 md:items-start"
       >
         <div className="flex flex-col items-center md:items-start gap-2">
-          <IoBugOutline className="text-3xl font-extrabold" />
-          <h1 className="text-xl font-extralight">CONTRACT DEBUGGER</h1>
+          <IoBugOutline className="text-3xl font-extrabold dark:text-white" />
+          <h1 className="text-xl font-extralight dark:text-white">
+            CONTRACT DEBUGGER
+          </h1>
         </div>
 
         <div>
-          <p className="text-2xl md:text-4xl font-bold leading-tight max-w-sm text-center md:text-left">
+          <p className="max-w-sm text-center text-2xl font-bold leading-tight dark:text-white md:text-left md:text-4xl">
             Adaptable Solidity playground
           </p>
         </div>
 
         <div>
-          <p className="text-md max-w-xs text-center md:text-left">
+          <p className="max-w-xs text-center text-md dark:text-slate-300 md:text-left">
             Debug and refine your smart contracts with a live-updating frontend.
             You can read from, write to, and monitor the state of your deployed
             smart contracts

@@ -15,7 +15,7 @@ export default function Hero() {
   const [activeCommandTab, setActiveCommandTab] = useState<"npx" | "git">(
     "npx",
   );
-  const [starsCount, setStarsCount] = useState("");
+  const [starsCount, setStarsCount] = useState<string>("");
   const { isInFarcaster, user } = useFarcasterContext();
 
   const commandByTab = {
@@ -54,8 +54,15 @@ export default function Hero() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const formattedStars = starsCount
+    ? new Intl.NumberFormat("en-US", {
+        notation: "compact",
+        maximumFractionDigits: 1,
+      }).format(Number(starsCount))
+    : "...";
+
   return (
-    <section className="p-6 max-w-[1200px] mx-auto bg-white">
+    <section className="bg-site mx-auto max-w-[1200px] px-6 pb-12 pt-6 transition-colors duration-300">
       {/* Farcaster Welcome Message */}
       {isInFarcaster && user && (
         <div className="text-center mb-8">
@@ -65,16 +72,18 @@ export default function Hero() {
                 alt={user.displayName}
                 fill
                 src={user.pfpUrl || "/images/logo.png"}
-                className="rounded-full object-cover border-2 border-gray-200"
+                className="border-theme rounded-full border-2 object-cover"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/images/logo.png";
                 }}
                 unoptimized={true}
               />
             </div>
-            <span className="text-lg text-gray-600">
+            <span className="text-muted text-lg">
               Welcome,{" "}
-              <span className="font-bold text-black">{user.displayName}</span>
+              <span className="font-bold text-black dark:text-white">
+                {user.displayName}
+              </span>
             </span>
           </div>
         </div>
@@ -86,7 +95,7 @@ export default function Hero() {
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionReveal}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col md:flex-row items-center md:items-end justify-between md:justify-between md:space-x-14 md:mt-14"
+        className="mt-8 flex flex-col items-center justify-between md:mt-12 md:flex-row md:items-end md:space-x-14"
       >
         <motion.div
           initial={{ opacity: 0, x: -24 }}
@@ -96,36 +105,44 @@ export default function Hero() {
           className="flex flex-col items-center md:items-start"
         >
           {/* Logo */}
-          <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold tracking-tight mb-6">
+          <h1 className="mb-6 text-center text-4xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 md:text-left md:text-6xl">
             ETH Mobile
           </h1>
 
           {/* Main heading */}
-          <p className="max-w-md mx-auto text-lg sm:text-xl text-center md:text-left text-gray-400 mb-8">
+          <p className="text-muted mx-auto mb-8 max-w-md text-center text-lg sm:text-xl md:text-left">
             Build native mobile dApps using{" "}
-            <span className="text-black">lightweight</span>,{" "}
-            <span className="text-black">composable</span>, and{" "}
-            <span className="text-black">type-safe</span> modules that interface
-            with Ethereum
+            <span className="text-slate-900 dark:text-slate-100">
+              lightweight
+            </span>
+            ,{" "}
+            <span className="text-slate-900 dark:text-slate-100">
+              composable
+            </span>
+            , and{" "}
+            <span className="text-slate-900 dark:text-slate-100">
+              type-safe
+            </span>{" "}
+            modules that interface with Ethereum
           </p>
 
           {/* Action buttons */}
-          <div className="flex gap-4 mb-12 md:mb-0">
+          <div className="mb-12 flex flex-wrap gap-3 md:mb-0">
             <Link
               href="https://docs.ethmobile.dev"
-              className="px-4 py-2 bg-orange-400 hover:bg-orange-500 rounded-md font-bold transition-colors text-sm text-gray-800 whitespace-nowrap"
+              className="whitespace-nowrap rounded-md bg-[#f97316] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#ea580c]"
             >
               Get Started
             </Link>
             <button
               onClick={() => setShowWhy(true)}
-              className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600 whitespace-nowrap"
+              className="bg-surface border-theme text-muted whitespace-nowrap rounded-md border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-soft"
             >
               Why Us?
             </button>
             <Link
               href="https://t.me/ethmobile_io"
-              className="px-4 py-2 bg-gray-100 border hover:bg-gray-200 rounded-md font-bold transition-colors text-sm text-gray-600"
+              className="bg-surface border-theme text-muted rounded-md border px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-soft"
             >
               Telegram
             </Link>
@@ -134,8 +151,8 @@ export default function Hero() {
           {/* Clean one-liner */}
           {isInFarcaster && user && (
             <div className="text-center mt-6">
-              <p className="text-lg text-gray-400">
-                Re-use your <span className="text-black">miniapp</span> code
+              <p className="text-muted text-lg">
+                Re-use your <span className="text-theme">miniapp</span> code
               </p>
             </div>
           )}
@@ -149,34 +166,34 @@ export default function Hero() {
           transition={{ delay: 0.16, duration: 0.6, ease: "easeOut" }}
           className="w-full max-w-[500px] flex flex-col items-center md:items-start"
         >
-          <div className="w-full max-w-[500px] mx-auto bg-gray-800/50 rounded-lg overflow-hidden backdrop-blur-sm border-2 border-gray-100">
-            <div className="bg-white flex">
+          <div className="bg-surface border-theme mx-auto w-full max-w-[500px] overflow-hidden rounded-lg border shadow-sm">
+            <div className="bg-surface-soft border-theme flex border-b">
               <button
                 onClick={() => setActiveCommandTab("npx")}
-                className={`px-4 py-2 border-b-2 font-medium transition-colors ${
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
                   activeCommandTab === "npx"
-                    ? "border-orange-400 text-black"
-                    : "border-transparent text-gray-500 hover:text-black"
+                    ? "border-b-2 border-[#f97316] text-theme"
+                    : "text-muted hover:text-theme"
                 }`}
               >
                 npx
               </button>
               <button
                 onClick={() => setActiveCommandTab("git")}
-                className={`px-4 py-2 border-b-2 font-medium transition-colors ${
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
                   activeCommandTab === "git"
-                    ? "border-orange-400 text-black"
-                    : "border-transparent text-gray-500 hover:text-black"
+                    ? "border-b-2 border-[#f97316] text-theme"
+                    : "text-muted hover:text-theme"
                 }`}
               >
                 git
               </button>
             </div>
-            <div className="pr-20 text-left bg-gray-100 relative">
-              <div className="overflow-x-auto whitespace-nowrap scrollbar scrollbar-thumb-orange-400 scrollbar-track-orange-400 py-5 pl-4">
+            <div className="bg-surface relative pr-20 text-left">
+              <div className="scrollbar scrollbar-track-slate-200 scrollbar-thumb-slate-300 overflow-x-auto whitespace-nowrap py-5 pl-4 dark:scrollbar-track-slate-900 dark:scrollbar-thumb-slate-700">
                 <code>
-                  <span className="text-purple-500">{activeCommandTab} </span>
-                  <span className="text-blue-900">
+                  <span className="text-orange-500">{activeCommandTab} </span>
+                  <span className="text-theme">
                     {commandByTab[activeCommandTab].replace(
                       `${activeCommandTab} `,
                       "",
@@ -187,7 +204,7 @@ export default function Hero() {
 
               <button
                 onClick={copyCommand}
-                className="text-xl text-gray-500 border border-gray-300 hover:bg-gray-200 duration-200 rounded-md p-2 absolute top-4 right-4"
+                className="text-muted border-theme absolute right-4 top-4 rounded-md border p-2 text-xl duration-200 hover:bg-surface-soft"
               >
                 {isCopied ? (
                   <TiTickOutline className="text-green-400" />
@@ -199,16 +216,18 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="flex items-center gap-4 mt-4 md:mt-10">
+          <div className="mt-5 flex items-center gap-3 md:mt-8">
             <Link
               href="https://github.com/eth-mobile/eth-mobile/stargazers"
               target="_blank"
             >
-              <div className="flex items-center gap-2 bg-gray-100 border hover:bg-gray-200 px-3 py-[0.35rem] rounded-lg">
-                <span className="text-sm text-gray-600 font-bold bg-white rounded-md px-2">
+              <div className="bg-surface-soft border-theme flex items-center gap-2 rounded-md border px-3 py-1 hover:brightness-95">
+                <span className="bg-surface text-muted rounded px-2 text-sm font-medium">
                   stars
                 </span>
-                <span className="text-sm font-bold">{starsCount}</span>
+                <span className="text-theme text-sm font-semibold">
+                  {formattedStars}
+                </span>
               </div>
             </Link>
 
@@ -216,11 +235,11 @@ export default function Hero() {
               href="https://github.com/eth-mobile/eth-mobile/blob/main/LICENCE"
               target="_blank"
             >
-              <div className="flex items-center gap-2 bg-gray-100 border hover:bg-gray-200 px-3 py-[0.35rem] rounded-lg">
-                <span className="text-sm text-gray-600 font-bold bg-white rounded-md px-3">
+              <div className="bg-surface-soft border-theme flex items-center gap-2 rounded-md border px-3 py-1 hover:brightness-95">
+                <span className="bg-surface text-muted rounded px-3 text-sm font-medium">
                   license
                 </span>
-                <span className="text-sm font-bold">MIT</span>
+                <span className="text-theme text-sm font-semibold">MIT</span>
               </div>
             </Link>
           </div>
@@ -245,30 +264,30 @@ export default function Hero() {
         <motion.div
           variants={sectionReveal}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+          className="bg-surface border-theme rounded-lg border p-6"
         >
-          <h3 className="text-lg font-bold mb-2">Modular</h3>
-          <p className="text-gray-400">
+          <h3 className="text-theme mb-2 text-lg font-semibold">Modular</h3>
+          <p className="text-muted">
             Composable modules to build applications with speed
           </p>
         </motion.div>
         <motion.div
           variants={sectionReveal}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+          className="bg-surface border-theme rounded-lg border p-6"
         >
-          <h3 className="text-lg font-bold mb-2">Lightweight</h3>
-          <p className="text-gray-400">
+          <h3 className="text-theme mb-2 text-lg font-semibold">Lightweight</h3>
+          <p className="text-muted">
             Tiny bundle size optimized for memory management
           </p>
         </motion.div>
         <motion.div
           variants={sectionReveal}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+          className="bg-surface border-theme rounded-lg border p-6"
         >
-          <h3 className="text-lg font-bold mb-2">Performant</h3>
-          <p className="text-gray-400">
+          <h3 className="text-theme mb-2 text-lg font-semibold">Performant</h3>
+          <p className="text-muted">
             Optimized architecture for seamless experience across a wide range
             of devices
           </p>
@@ -276,10 +295,10 @@ export default function Hero() {
         <motion.div
           variants={sectionReveal}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+          className="bg-surface border-theme rounded-lg border p-6"
         >
-          <h3 className="text-lg font-bold mb-2">Typed Utils</h3>
-          <p className="text-gray-400">
+          <h3 className="text-theme mb-2 text-lg font-semibold">Typed Utils</h3>
+          <p className="text-muted">
             Flexible programmatic utilities with extensive TypeScript typing
           </p>
         </motion.div>
@@ -297,29 +316,31 @@ export default function Hero() {
           <div className="text-center mb-8">
             <div className="flex justify-center items-center gap-2 mb-4">
               <span className="text-2xl">🚀</span>
-              <h3 className="text-xl font-extralight text-gray-600">
+              <h3 className="text-muted text-xl font-extralight">
                 MINIAPP TO MOBILE
               </h3>
             </div>
-            <h4 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
+            <h4 className="mb-4 text-2xl font-bold leading-tight dark:text-white md:text-3xl">
               From Farcaster Miniapp to{" "}
-              <span className="text-black">Native Mobile App</span>
+              <span className="text-black dark:text-white">
+                Native Mobile App
+              </span>
             </h4>
-            <p className="text-md text-gray-400 max-w-2xl mx-auto">
+            <p className="text-muted mx-auto max-w-2xl text-md">
               ETH Mobile is perfectly positioned to help you scale your
               successful Farcaster miniapp into a full-featured native mobile
               application, reusing your existing React codebase.
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-gray-800 to-gray-100 rounded-2xl p-6 text-white text-center">
+          <div className="bg-surface-soft border-theme text-theme rounded-2xl border p-6 text-center">
             <div className="flex justify-center items-center gap-4 mb-4">
-              <div className="flex items-center gap-2 bg-black/30 rounded-full px-3 py-2">
+              <div className="bg-surface border-theme flex items-center gap-2 rounded-full border px-3 py-2">
                 <span className="text-lg">🔮</span>
                 <span className="font-medium text-sm">Farcaster Miniapp</span>
               </div>
               <span className="text-xl">→</span>
-              <div className="flex items-center gap-2 bg-black/30 rounded-full px-3 py-2">
+              <div className="bg-surface border-theme flex items-center gap-2 rounded-full border px-3 py-2">
                 <span className="text-lg">📱</span>
                 <span className="font-medium text-sm">Native Mobile App</span>
               </div>
@@ -332,13 +353,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="#contact"
-                className="px-4 py-2 bg-orange-400 hover:bg-orange-500 text-gray-800 rounded-lg font-bold transition-colors text-sm"
+                className="rounded-lg bg-[#f97316] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#ea580c]"
               >
                 Get Started Today
               </a>
               <a
                 href="https://docs.ethmobile.dev"
-                className="px-4 py-2 border border-white/30 rounded-lg font-bold hover:bg-white/10 transition-colors text-sm"
+                className="border-theme rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-surface"
               >
                 View Documentation
               </a>
@@ -353,11 +374,11 @@ export default function Hero() {
           animate={{ opacity: 1, backgroundColor: "rgba(0,0,0,0.3)" }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
           onClick={() => setShowWhy(false)}
-          className="absolute w-full h-screen top-0 left-0 flex flex-col justify-center items-center"
+          className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center"
         >
-          <div className="w-[80%] max-h-[500px] max-w-[500px] bg-white p-6 rounded-lg flex flex-col gap-4 text-gray-600 text-sm overflow-y-scroll">
+          <div className="bg-surface text-muted border-theme flex max-h-[500px] w-[80%] max-w-[500px] flex-col gap-4 overflow-y-scroll rounded-lg border p-6 text-sm">
             <div className="flex items-center justify-between">
-              <h1 className="text-lg text-black">THE VISION</h1>
+              <h1 className="text-lg text-black dark:text-white">THE VISION</h1>
               <IoCloseOutline
                 className="text-3xl cursor-pointer"
                 onClick={() => setShowWhy(false)}

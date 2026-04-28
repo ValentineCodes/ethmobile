@@ -31,15 +31,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="text-black bg-white">
-      <Popover className="relative min-h-screen w-full bg-white">
+    <main className="bg-site text-theme transition-colors duration-300">
+      <Popover className="relative min-h-screen w-full border-b border-theme bg-site transition-colors duration-300">
         <Header />
         <Hero />
       </Popover>
 
       <motion.section
         id="sponsors"
-        className="bg-white"
+        className="bg-site transition-colors duration-300"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
@@ -50,7 +50,7 @@ export default function Home() {
 
       <motion.section
         id="wallet"
-        className="bg-blue-50"
+        className="border-y border-theme bg-site transition-colors duration-300"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
@@ -61,7 +61,7 @@ export default function Home() {
 
       <motion.section
         id="debugger"
-        className="bg-white"
+        className="bg-site transition-colors duration-300"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
@@ -72,7 +72,7 @@ export default function Home() {
 
       <motion.section
         id="hooks"
-        className="bg-blue-50"
+        className="border-y border-theme bg-site transition-colors duration-300"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}

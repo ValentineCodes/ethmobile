@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const font = Poppins({ subsets: ["latin"], weight: "300" });
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "ETH Mobile | The Foundation of Mobile dApps",
@@ -29,7 +32,11 @@ export default function RootLayout({
           content='{"version":"next","imageUrl":"https://ethmobile.dev/images/logo.png","button":{"title":"🚀 Launch ETH Mobile","action":{"type":"launch_frame","name":"ETH Mobile","url":"https://ethmobile.dev","splashImageUrl":"https://ethmobile.dev/images/logo.png","splashBackgroundColor":"#ffffff"}}}'
         />
       </head>
-      <body className={`${font.className} bg-white`}>{children}</body>
+      <body
+        className={`${font.className} bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

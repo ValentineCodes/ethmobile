@@ -20,18 +20,20 @@ export default function Hooks() {
         className="container flex flex-1 flex-col items-center gap-6 md:items-start"
       >
         <div className="flex flex-col items-center md:items-start gap-2">
-          <GiHook className="text-3xl font-extrabold" />
-          <h1 className="text-xl font-extralight">HOOKS AND UTILS</h1>
+          <GiHook className="text-3xl font-extrabold dark:text-white" />
+          <h1 className="text-xl font-extralight dark:text-white">
+            HOOKS AND UTILS
+          </h1>
         </div>
 
         <div>
-          <p className="text-2xl md:text-4xl font-bold leading-tight max-w-sm text-center md:text-left">
+          <p className="max-w-sm text-center text-2xl font-bold leading-tight dark:text-white md:text-left md:text-4xl">
             Custom &quot;Wagmi&quot; hooks and utils for common use cases
           </p>
         </div>
 
         <div>
-          <p className="text-md max-w-xs text-center md:text-left">
+          <p className="max-w-xs text-center text-md dark:text-slate-300 md:text-left">
             Designed to simplify interactions with your wallet and smart
             contracts
           </p>
@@ -43,7 +45,7 @@ export default function Hooks() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ delay: 0.16, duration: 0.6, ease: "easeOut" }}
-        className="mt-12 flex w-full max-w-[540px] flex-col gap-2 overflow-x-scroll rounded-2xl border-[20px] border-white bg-blue-50 p-6 font-mono text-xs shadow-[0_3px_10px_rgb(0,0,100,0.2)] scrollbar-hide md:mt-0"
+        className="bg-surface-soft border-theme mt-12 flex w-full max-w-[540px] flex-col gap-2 overflow-x-scroll rounded-2xl border p-6 font-mono text-xs shadow-[0_3px_10px_rgb(0,0,100,0.08)] scrollbar-hide md:mt-0"
       >
         <div className="flex gap-2 whitespace-nowrap">
           <span className="text-[#C586C0]">import</span>

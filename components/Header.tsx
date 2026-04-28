@@ -10,7 +10,7 @@ import { RiMenu2Fill } from "react-icons/ri";
 
 export default function Header() {
   return (
-    <header className="container mx-auto flex justify-between items-center bg-white px-6 py-4 space-x-4 h-24">
+    <header className="mx-auto flex h-20 w-full max-w-[1200px] items-center justify-between space-x-4 px-6 py-4 transition-colors duration-300">
       <div className="flex items-center space-x-3">
         <div className="flex relative w-12 aspect-square">
           <Image alt="Logo" fill src="/images/logo.png" />
@@ -18,32 +18,32 @@ export default function Header() {
       </div>
 
       <nav className="flex items-center space-x-4">
-        <ul className="hidden lg:flex items-center justify-between space-x-6 text-sm text-gray-600 font-light">
+        <ul className="text-muted hidden items-center justify-between space-x-6 text-sm font-normal lg:flex">
           <li className="cursor-pointer">
             <Link
               href="https://docs.ethmobile.dev"
-              className="hover:text-black duration-300"
+              className="duration-200 hover:text-theme"
             >
               Docs
             </Link>
           </li>
         </ul>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-3">
           <Link href="https://t.me/ethmobile_io" target="_blank">
-            <FaTelegram className="text-gray-600 hover:text-black duration-200 text-2xl" />
+            <FaTelegram className="text-muted text-xl duration-200 hover:text-theme" />
           </Link>
 
           <Link href="https://x.com/ethmobile_io" target="_blank">
-            <FaXTwitter className="text-gray-600 hover:text-black duration-200 text-2xl" />
+            <FaXTwitter className="text-muted text-xl duration-200 hover:text-theme" />
           </Link>
 
           <Link href="https://github.com/eth-mobile/eth-mobile" target="_blank">
-            <FaGithub className="text-gray-600 hover:text-black duration-200 text-2xl" />
+            <FaGithub className="text-muted text-xl duration-200 hover:text-theme" />
           </Link>
         </div>
 
-        <PopoverButton className="hover:bg-black hover:bg-opacity-20 p-2 rounded-lg block lg:hidden outline-none">
+        <PopoverButton className="block rounded-lg p-2 outline-none hover:bg-slate-200/70 dark:hover:bg-slate-800 lg:hidden">
           {({ open }) =>
             open ? (
               <CgClose className="text-xl" />
@@ -57,13 +57,13 @@ export default function Header() {
       <PopoverPanel
         transition
         anchor="bottom"
-        className="rounded-xl border bg-white text-sm/6 transition duration-200 ease-in-out [--anchor-gap:var(--spacing-5)] data-[closed]:-translate-y-1 data-[closed]:opacity-0"
+        className="bg-surface border-theme rounded-xl border text-sm/6 transition duration-200 ease-in-out [--anchor-gap:var(--spacing-5)] data-[closed]:-translate-y-1 data-[closed]:opacity-0"
       >
-        <ul className="text-sm text-gray-600 font-light">
+        <ul className="text-muted text-sm font-normal">
           <li>
             <Link
               href="https://docs.ethmobile.dev"
-              className="block p-4 hover:bg-black hover:bg-opacity-10 duration-200"
+              className="block p-4 duration-200 hover:bg-surface-soft"
             >
               Docs
             </Link>

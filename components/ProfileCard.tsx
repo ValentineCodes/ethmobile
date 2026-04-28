@@ -66,33 +66,33 @@ export default function ProfileCard({
 
   if (isLoading || !profile) {
     return (
-      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 animate-pulse">
+      <div className="bg-surface border-theme animate-pulse rounded-2xl border p-6 shadow-sm">
         <div className="flex items-start space-x-4 mb-4">
-          <div className="w-16 h-16 bg-gray-200 rounded-full"></div>
+          <div className="h-16 w-16 rounded-full bg-gray-200 dark:bg-slate-700"></div>
           <div className="flex-1">
-            <div className="h-6 bg-gray-200 rounded mb-2"></div>
-            <div className="h-4 bg-gray-200 rounded w-24"></div>
+            <div className="mb-2 h-6 rounded bg-gray-200 dark:bg-slate-700"></div>
+            <div className="h-4 w-24 rounded bg-gray-200 dark:bg-slate-700"></div>
           </div>
-          <div className="w-10 h-10 bg-gray-200 rounded-lg"></div>
+          <div className="h-10 w-10 rounded-lg bg-gray-200 dark:bg-slate-700"></div>
         </div>
         <div className="space-y-2">
-          <div className="h-4 bg-gray-200 rounded"></div>
-          <div className="h-4 bg-gray-200 rounded"></div>
-          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-4 rounded bg-gray-200 dark:bg-slate-700"></div>
+          <div className="h-4 rounded bg-gray-200 dark:bg-slate-700"></div>
+          <div className="h-4 w-3/4 rounded bg-gray-200 dark:bg-slate-700"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+    <div className="bg-surface border-theme rounded-2xl border p-6 shadow-sm transition-colors hover:bg-surface-soft">
       <div className="flex items-start space-x-4 mb-4">
         <div className="relative w-16 h-16">
           <Image
             alt={profile.displayName}
             fill
             src={profile.pfpUrl || "/images/logo.png"}
-            className="rounded-full object-cover border-2 border-gray-200"
+            className="border-theme rounded-full border-2 object-cover"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/images/logo.png";
             }}
@@ -100,24 +100,24 @@ export default function ProfileCard({
           />
         </div>
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-gray-900">
+          <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
             {profile.displayName}
           </h3>
-          <p className="text-gray-600 font-medium">@{profile.username}</p>
+          <p className="text-muted font-medium">@{profile.username}</p>
         </div>
         <button
           onClick={handleViewProfile}
-          className="p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+          className="bg-surface-soft rounded-lg p-2 transition-colors hover:brightness-95"
         >
-          <FarcasterIcon className="w-6 h-6 text-gray-600" />
+          <FarcasterIcon className="text-muted h-6 w-6" />
         </button>
       </div>
-      <p className="text-gray-600 text-sm leading-relaxed mb-4">
+      <p className="text-muted mb-4 text-sm leading-relaxed">
         {profile.bio || bio}
       </p>
       <button
         onClick={handleViewProfile}
-        className="inline-flex items-center space-x-2 text-gray-600 hover:text-black font-medium text-sm transition-colors"
+        className="text-muted inline-flex items-center space-x-2 text-sm font-medium transition-colors hover:text-theme"
       >
         <FarcasterIcon className="w-4 h-4" />
         <span>View on Farcaster</span>

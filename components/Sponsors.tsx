@@ -10,7 +10,7 @@ export default function Sponsors() {
       transition={{ duration: 0.55, ease: "easeOut" }}
       className="mx-auto max-w-[1200px] px-6 py-14"
     >
-      <h2 className="mb-4 text-center text-md font-semibold text-slate-700 md:text-lg">
+      <h2 className="text-muted mb-4 text-center text-md font-medium md:text-lg">
         Sponsored By
       </h2>
       <motion.div
@@ -18,7 +18,7 @@ export default function Sponsors() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ delay: 0.08, duration: 0.45, ease: "easeOut" }}
-        className="flex h-20 items-center justify-center rounded-xl bg-white shadow-sm"
+        className="bg-surface flex h-20 items-center justify-center rounded-xl shadow-sm"
       >
         <img
           src="/images/sponsors/gitcoin.png"

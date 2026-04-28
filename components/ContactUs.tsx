@@ -44,7 +44,10 @@ export default function ContactUs() {
   ];
 
   return (
-    <section id="contact" className="bg-gray-50 py-16">
+    <section
+      id="contact"
+      className="bg-transparent py-16 transition-colors duration-300"
+    >
       <div className="max-w-[1200px] mx-auto px-6">
         <motion.div
           initial="hidden"
@@ -54,10 +57,11 @@ export default function ContactUs() {
           transition={{ duration: 0.55, ease: "easeOut" }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Ready to Build Your <span className="text-black">Mobile dApp</span>?
+          <h2 className="mb-6 text-3xl font-semibold text-slate-900 dark:text-slate-100 md:text-5xl">
+            Ready to Build Your{" "}
+            <span className="text-black dark:text-white">Mobile dApp</span>?
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-muted mx-auto mb-8 max-w-3xl text-lg">
             Contact us to discuss how we can help you transform your existing
             Next.js code into a powerful native mobile dApp. We specialize in
             helping Farcaster miniapps scale to full mobile applications.
@@ -101,12 +105,12 @@ export default function ContactUs() {
           viewport={{ once: true, amount: 0.35 }}
           variants={reveal}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
-          className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+          className="bg-surface border-theme rounded-2xl border p-8 text-center shadow-sm"
         >
-          <h3 className="text-2xl font-bold mb-4">
+          <h3 className="mb-4 text-2xl font-semibold text-slate-900 dark:text-slate-100">
             Let&apos;s Build Something Amazing Together
           </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted mx-auto mb-6 max-w-2xl">
             Whether you&apos;re starting from scratch or scaling an existing
             Farcaster miniapp, our team has the expertise to bring your mobile
             dApp vision to life. We&apos;ll help you reuse your existing Next.js
@@ -117,20 +121,20 @@ export default function ContactUs() {
               href={team[0].profileUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-orange-400 hover:bg-orange-500 text-gray-800 rounded-lg font-bold transition-colors"
+              className="inline-flex items-center space-x-2 rounded-lg bg-[#f97316] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#ea580c]"
             >
               <FarcasterIcon className="w-5 h-5" />
               <span>Message on Farcaster</span>
             </Link>
             <button
               onClick={() => setShowWhy(true)}
-              className="px-6 py-3 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-lg font-bold transition-colors"
+              className="text-muted border-theme rounded-lg border px-6 py-3 font-medium transition-colors hover:bg-surface-soft"
             >
               Why Us?
             </button>
             <Link
               href="https://docs.ethmobile.dev"
-              className="px-6 py-3 border border-gray-300 text-gray-600 hover:bg-gray-50 rounded-lg font-bold transition-colors"
+              className="text-muted border-theme rounded-lg border px-6 py-3 font-medium transition-colors hover:bg-surface-soft"
             >
               Explore Documentation
             </Link>
@@ -145,11 +149,11 @@ export default function ContactUs() {
           animate={{ opacity: 1, backgroundColor: "rgba(0,0,0,0.3)" }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
           onClick={() => setShowWhy(false)}
-          className="fixed w-full h-screen top-0 left-0 flex flex-col justify-center items-center z-50"
+          className="fixed left-0 top-0 z-50 flex h-screen w-full flex-col items-center justify-center"
         >
-          <div className="w-[80%] max-h-[500px] max-w-[500px] bg-white p-6 rounded-lg flex flex-col gap-4 text-gray-600 text-sm overflow-y-scroll">
+          <div className="bg-surface text-muted border-theme flex max-h-[500px] w-[80%] max-w-[500px] flex-col gap-4 overflow-y-scroll rounded-lg border p-6 text-sm">
             <div className="flex items-center justify-between">
-              <h1 className="text-lg text-black">THE VISION</h1>
+              <h1 className="text-lg text-black dark:text-white">THE VISION</h1>
               <IoCloseOutline
                 className="text-3xl cursor-pointer"
                 onClick={() => setShowWhy(false)}
