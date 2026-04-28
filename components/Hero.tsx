@@ -12,15 +12,21 @@ import { useFarcasterContext } from "@/hooks/useFarcasterContext";
 export default function Hero() {
   const [isCopied, setIsCopied] = useState(false);
   const [showWhy, setShowWhy] = useState(false);
+  const [activeCommandTab, setActiveCommandTab] = useState<"npx" | "git">(
+    "npx",
+  );
   const [starsCount, setStarsCount] = useState("");
   const { isInFarcaster, user } = useFarcasterContext();
+
+  const commandByTab = {
+    npx: "npx eth-mobile",
+    git: "git clone https://github.com/dewdrip/eth-mobile",
+  } as const;
 
   const copyCommand = async () => {
     try {
       // Copy text to clipboard
-      await navigator.clipboard.writeText(
-        "https://github.com/dewdrip/eth-mobile.git",
-      );
+      await navigator.clipboard.writeText(commandByTab[activeCommandTab]);
       setIsCopied(true); // Show "Copied!" effect
 
       // Remove "Copied!" text after 2 seconds
@@ -120,20 +126,38 @@ export default function Hero() {
         {/* Package manager tabs */}
         <div className="w-full max-w-[500px] flex flex-col items-center md:items-start">
           <div className="w-full max-w-[500px] mx-auto bg-gray-800/50 rounded-lg overflow-hidden backdrop-blur-sm border-2 border-gray-100">
-            <div className="bg-white">
-              <button className="px-4 py-2 border-b-2 border-orange-400 font-medium">
+            <div className="bg-white flex">
+              <button
+                onClick={() => setActiveCommandTab("npx")}
+                className={`px-4 py-2 border-b-2 font-medium transition-colors ${
+                  activeCommandTab === "npx"
+                    ? "border-orange-400 text-black"
+                    : "border-transparent text-gray-500 hover:text-black"
+                }`}
+              >
+                npx
+              </button>
+              <button
+                onClick={() => setActiveCommandTab("git")}
+                className={`px-4 py-2 border-b-2 font-medium transition-colors ${
+                  activeCommandTab === "git"
+                    ? "border-orange-400 text-black"
+                    : "border-transparent text-gray-500 hover:text-black"
+                }`}
+              >
                 git
               </button>
             </div>
             <div className="pr-20 text-left bg-gray-100 relative">
               <div className="overflow-x-auto whitespace-nowrap scrollbar scrollbar-thumb-orange-400 scrollbar-track-orange-400 py-5 pl-4">
                 <code>
-                  <span className="text-purple-500">
-                    git{" "}
-                    <span className="text-blue-900">
-                      clone https://github.com/dewdrip/eth-mobile
-                    </span>
-                  </span>{" "}
+                  <span className="text-purple-500">{activeCommandTab} </span>
+                  <span className="text-blue-900">
+                    {commandByTab[activeCommandTab].replace(
+                      `${activeCommandTab} `,
+                      "",
+                    )}
+                  </span>
                 </code>
               </div>
 
