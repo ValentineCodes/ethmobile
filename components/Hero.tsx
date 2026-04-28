@@ -20,7 +20,7 @@ export default function Hero() {
 
   const commandByTab = {
     npx: "npx eth-mobile",
-    git: "git clone https://github.com/dewdrip/eth-mobile",
+    git: "git clone https://github.com/eth-mobile/eth-mobile",
   } as const;
 
   const copyCommand = async () => {
@@ -40,7 +40,7 @@ export default function Hero() {
     (async () => {
       try {
         const { data: repo } = await axios.get(
-          "https://api.github.com/repos/dewdrip/eth-mobile",
+          "https://api.github.com/repos/eth-mobile/eth-mobile",
         );
         setStarsCount(repo.stargazers_count);
       } catch (error) {
@@ -177,7 +177,7 @@ export default function Hero() {
           {/* Stats */}
           <div className="flex items-center gap-4 mt-4 md:mt-10">
             <Link
-              href="https://github.com/dewdrip/eth-mobile/stargazers"
+              href="https://github.com/eth-mobile/eth-mobile/stargazers"
               target="_blank"
             >
               <div className="flex items-center gap-2 bg-gray-100 border hover:bg-gray-200 px-3 py-[0.35rem] rounded-lg">
@@ -189,7 +189,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="https://github.com/dewdrip/eth-mobile/blob/main/LICENCE"
+              href="https://github.com/eth-mobile/eth-mobile/blob/main/LICENCE"
               target="_blank"
             >
               <div className="flex items-center gap-2 bg-gray-100 border hover:bg-gray-200 px-3 py-[0.35rem] rounded-lg">

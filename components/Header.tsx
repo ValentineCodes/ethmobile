@@ -38,7 +38,7 @@ export default function Header() {
             <FaXTwitter className="text-gray-600 hover:text-black duration-200 text-2xl" />
           </Link>
 
-          <Link href="https://github.com/dewdrip/eth-mobile" target="_blank">
+          <Link href="https://github.com/eth-mobile/eth-mobile" target="_blank">
             <FaGithub className="text-gray-600 hover:text-black duration-200 text-2xl" />
           </Link>
         </div>
