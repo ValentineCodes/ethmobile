@@ -49,6 +49,11 @@ export default function Hero() {
     })();
   }, []);
 
+  const sectionReveal = {
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="p-6 max-w-[1200px] mx-auto bg-white">
       {/* Farcaster Welcome Message */}
@@ -75,8 +80,21 @@ export default function Hero() {
         </div>
       )}
 
-      <div className="flex flex-col md:flex-row items-center md:items-end justify-between md:justify-between md:space-x-14 md:mt-14">
-        <div className="flex flex-col items-center md:items-start">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex flex-col md:flex-row items-center md:items-end justify-between md:justify-between md:space-x-14 md:mt-14"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center md:items-start"
+        >
           {/* Logo */}
           <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold tracking-tight mb-6">
             ETH Mobile
@@ -121,10 +139,16 @@ export default function Hero() {
               </p>
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Package manager tabs */}
-        <div className="w-full max-w-[500px] flex flex-col items-center md:items-start">
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.16, duration: 0.6, ease: "easeOut" }}
+          className="w-full max-w-[500px] flex flex-col items-center md:items-start"
+        >
           <div className="w-full max-w-[500px] mx-auto bg-gray-800/50 rounded-lg overflow-hidden backdrop-blur-sm border-2 border-gray-100">
             <div className="bg-white flex">
               <button
@@ -200,41 +224,76 @@ export default function Hero() {
               </div>
             </Link>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Feature grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-        <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.08,
+            },
+          },
+        }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
+      >
+        <motion.div
+          variants={sectionReveal}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+        >
           <h3 className="text-lg font-bold mb-2">Modular</h3>
           <p className="text-gray-400">
             Composable modules to build applications with speed
           </p>
-        </div>
-        <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
+        </motion.div>
+        <motion.div
+          variants={sectionReveal}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+        >
           <h3 className="text-lg font-bold mb-2">Lightweight</h3>
           <p className="text-gray-400">
             Tiny bundle size optimized for memory management
           </p>
-        </div>
-        <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
+        </motion.div>
+        <motion.div
+          variants={sectionReveal}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+        >
           <h3 className="text-lg font-bold mb-2">Performant</h3>
           <p className="text-gray-400">
             Optimized architecture for seamless experience across a wide range
             of devices
           </p>
-        </div>
-        <div className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm">
+        </motion.div>
+        <motion.div
+          variants={sectionReveal}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="p-6 bg-transparent border border-gray-200 rounded-lg backdrop-blur-sm"
+        >
           <h3 className="text-lg font-bold mb-2">Typed Utils</h3>
           <p className="text-gray-400">
             Flexible programmatic utilities with extensive TypeScript typing
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Miniapp to Mobile section - moved up to fill whitespace */}
       {isInFarcaster && user && (
-        <div className="mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-16"
+        >
           <div className="text-center mb-8">
             <div className="flex justify-center items-center gap-2 mb-4">
               <span className="text-2xl">🚀</span>
@@ -285,7 +344,7 @@ export default function Hero() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {showWhy && (

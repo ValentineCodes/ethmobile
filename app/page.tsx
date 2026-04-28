@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { sdk } from "@farcaster/miniapp-sdk";
+import { motion } from "framer-motion";
 import ContractDebugger from "@/components/features/ContractDebugger";
 import Hooks from "@/components/features/Hooks";
 
@@ -36,21 +37,49 @@ export default function Home() {
         <Hero />
       </Popover>
 
-      <section id="sponsors" className="bg-white">
+      <motion.section
+        id="sponsors"
+        className="bg-white"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      >
         <Sponsors />
-      </section>
+      </motion.section>
 
-      <section id="wallet" className="bg-blue-50">
+      <motion.section
+        id="wallet"
+        className="bg-blue-50"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      >
         <PauxWallet />
-      </section>
+      </motion.section>
 
-      <section id="debugger" className="bg-white">
+      <motion.section
+        id="debugger"
+        className="bg-white"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      >
         <ContractDebugger />
-      </section>
+      </motion.section>
 
-      <section id="hooks" className="bg-blue-50">
+      <motion.section
+        id="hooks"
+        className="bg-blue-50"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      >
         <Hooks />
-      </section>
+      </motion.section>
 
       {isInFarcaster && user && <ContactUs />}
     </main>

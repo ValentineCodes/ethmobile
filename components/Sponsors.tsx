@@ -1,18 +1,31 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Sponsors() {
   return (
-    <div className="px-6 py-14 max-w-[1200px] mx-auto">
-      <h2 className="text-md md:text-lg text-center font-bold text-gray-800 mb-4">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.35 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+      className="mx-auto max-w-[1200px] px-6 py-14"
+    >
+      <h2 className="mb-4 text-center text-md font-semibold text-slate-700 md:text-lg">
         Sponsored By
       </h2>
-      <div className="flex justify-center items-center h-16">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ delay: 0.08, duration: 0.45, ease: "easeOut" }}
+        className="flex h-20 items-center justify-center rounded-xl bg-white shadow-sm"
+      >
         <img
           src="/images/sponsors/gitcoin.png"
           alt="Gitcoin"
-          className="object-contain w-64"
+          className="w-64 object-contain"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

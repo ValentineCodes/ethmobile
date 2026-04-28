@@ -1,11 +1,24 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import { GiHook } from "react-icons/gi";
 
 export default function Hooks() {
   return (
-    <section className="px-6 py-14 max-w-[1200px] mx-auto flex flex-col md:flex-row items-center md:justify-between md:space-x-14">
-      <div className="container flex-1 flex flex-col items-center gap-6 md:items-start">
+    <motion.section
+      initial={{ opacity: 0, y: 36 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.65, ease: "easeOut" }}
+      className="mx-auto flex max-w-[1200px] flex-col items-center px-6 py-14 md:flex-row md:justify-between md:space-x-14"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: -24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ delay: 0.08, duration: 0.6, ease: "easeOut" }}
+        className="container flex flex-1 flex-col items-center gap-6 md:items-start"
+      >
         <div className="flex flex-col items-center md:items-start gap-2">
           <GiHook className="text-3xl font-extrabold" />
           <h1 className="text-xl font-extralight">HOOKS AND UTILS</h1>
@@ -23,9 +36,15 @@ export default function Hooks() {
             contracts
           </p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="w-full max-w-[540px] mt-12 md:mt-0 flex flex-col border-[20px] border-white gap-2 bg-blue-50 p-6 rounded-2xl font-mono text-xs overflow-x-scroll scrollbar-hide shadow-[0_3px_10px_rgb(0,0,100,0.2)]">
+      <motion.div
+        initial={{ opacity: 0, x: 24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ delay: 0.16, duration: 0.6, ease: "easeOut" }}
+        className="mt-12 flex w-full max-w-[540px] flex-col gap-2 overflow-x-scroll rounded-2xl border-[20px] border-white bg-blue-50 p-6 font-mono text-xs shadow-[0_3px_10px_rgb(0,0,100,0.2)] scrollbar-hide md:mt-0"
+      >
         <div className="flex gap-2 whitespace-nowrap">
           <span className="text-[#C586C0]">import</span>
           <span>
@@ -114,7 +133,7 @@ export default function Hooks() {
         <div className="flex">
           <span className="text-[#808080]">/&gt;</span>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

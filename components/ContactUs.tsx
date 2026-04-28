@@ -19,6 +19,10 @@ const FarcasterIcon = ({ className }: { className?: string }) => (
 
 export default function ContactUs() {
   const [showWhy, setShowWhy] = useState(false);
+  const reveal = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   const team = [
     {
@@ -42,7 +46,14 @@ export default function ContactUs() {
   return (
     <section id="contact" className="bg-gray-50 py-16">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center mb-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={reveal}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Ready to Build Your <span className="text-black">Mobile dApp</span>?
           </h2>
@@ -51,22 +62,47 @@ export default function ContactUs() {
             Next.js code into a powerful native mobile dApp. We specialize in
             helping Farcaster miniapps scale to full mobile applications.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+        >
           {team.map((member) => (
-            <ProfileCard
+            <motion.div
               key={member.handle}
-              name={member.name}
-              handle={member.handle}
-              fid={member.fid}
-              bio={member.bio}
-              profileUrl={member.profileUrl}
-            />
+              variants={reveal}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <ProfileCard
+                name={member.name}
+                handle={member.handle}
+                fid={member.fid}
+                bio={member.bio}
+                profileUrl={member.profileUrl}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={reveal}
+          transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
+          className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+        >
           <h3 className="text-2xl font-bold mb-4">
             Let&apos;s Build Something Amazing Together
           </h3>
@@ -99,7 +135,7 @@ export default function ContactUs() {
               Explore Documentation
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Why Us Modal */}
